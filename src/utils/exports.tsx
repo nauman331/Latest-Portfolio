@@ -1,0 +1,19 @@
+export   const skills = [
+    "typescript",
+    "javascript",
+    "react",
+    "android",
+    "ios",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "vercel",
+    "git",
+    "github",
+    "visualstudiocode",
+    "androidstudio",
+    "figma",
+    "mongodb",
+    "mysql"
+  ];
