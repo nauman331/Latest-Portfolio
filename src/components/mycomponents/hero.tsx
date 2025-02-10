@@ -7,6 +7,7 @@ import { BoxReveal } from "@/components/magicui/box-reveal";
 import { motion } from "framer-motion";
 import { WordRotate } from "@/components/magicui/word-rotate";
 
+
 const Hero = () => {
   return (
     <>
@@ -20,7 +21,7 @@ const Hero = () => {
 
       <section className="container relative flex flex-col md:flex-row items-center justify-center overflow-hidden rounded-lg bg-background h-auto md:h-[600px] w-full">
         {/* Left Section - Text Content */}
-        <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center md:text-left">
+        <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center mt-14 md:mt-auto md:text-left">
           <div className="max-w-lg space-y-6">
             <BoxReveal boxColor={"#C62828"} duration={0.5}>
               <motion.p
