@@ -18,18 +18,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  const menuItems = ["Home", "Skills", "Projects", "Testinomials", "Contact"];
 
   return (
     <>
       {/* Scroll Progress Bar */}
-      <ScrollProgress className="top-0 z-50" />
+      <ScrollProgress className="top-0 z-[999]" />
 
       {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full transition-all duration-300 ${
-          scrolling ? "bg-white/90 shadow-lg dark:bg-black/90" : "bg-transparent"
-        } backdrop-blur-md z-50`}
+        className={`fixed top-0 left-0 w-full transition-all duration-300 ${scrolling ? "bg-white/90 shadow-lg dark:bg-black/90" : "bg-transparent"
+          } backdrop-blur-md z-50`}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           {/* Logo */}
@@ -42,15 +41,15 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <li key={item}>
                 <Link
-                  to={`/${item.toLowerCase()}`}
-                  className={`cursor-pointer transition-colors ${
-                    location.pathname === `/${item.toLowerCase()}`
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className={`cursor-pointer transition-colors ${(item === "Home" && location.pathname === "/") || location.pathname === `/${item.toLowerCase()}`
                       ? "text-red-600 font-semibold"
                       : "hover:text-red-500"
-                  }`}
+                    }`}
                 >
                   {item}
                 </Link>
+
               </li>
             ))}
           </ul>
