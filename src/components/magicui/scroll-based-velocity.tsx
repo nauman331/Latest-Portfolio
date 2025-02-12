@@ -31,7 +31,7 @@ export const wrap = (min: number, max: number, v: number) => {
 
 function ParallaxText({
   children,
-  baseVelocity = 100,
+  baseVelocity = 0.5,
   ...props
 }: ParallaxProps) {
   const baseX = useMotionValue(0);
@@ -42,9 +42,12 @@ function ParallaxText({
     stiffness: 400,
   });
 
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
+  const velocityFactor = useTransform(smoothVelocity, [-300, 300], [-1, 1], {
+    clamp: true, 
   });
+  
+  
+  
 
   const [repetitions, setRepetitions] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,7 +81,7 @@ function ParallaxText({
       directionFactor.current = 1;
     }
 
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    moveBy = directionFactor.current * baseVelocity * (1 + velocityFactor.get() * 0.5);
 
     baseX.set(baseX.get() + moveBy);
   });
@@ -101,7 +104,7 @@ function ParallaxText({
 }
 
 export function VelocityScroll({
-  defaultVelocity = 0.5,
+  defaultVelocity = 0.02,
   numRows = 2,
   children,
   className,
