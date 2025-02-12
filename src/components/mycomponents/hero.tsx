@@ -39,11 +39,11 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="mt-2 text-[1.2rem] flex items-center gap-2 font-medium"
+                className="md:text-[1.2rem] text-[.8rem] flex items-center gap-2 font-medium"
               >
                 I'm{" "}
                 <WordRotate
-                  className="font-bold text-[#C62828] text-[1.5rem]"
+                  className="font-bold text-[#C62828] md:text-[1.5rem] text-[1rem]"
                   words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer"]}
                 />
               </motion.h2>
@@ -54,7 +54,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-6 text-gray-700 text-[1.1rem] leading-relaxed"
+                className="mt-3 text-gray-700 text-[1.1rem] leading-relaxed"
               >
                 <p>
                   🚀 Passionate about creating{" "}
