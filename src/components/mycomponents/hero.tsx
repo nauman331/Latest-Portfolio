@@ -28,7 +28,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-[3.8rem] font-extrabold leading-tight tracking-wide"
+                className="md:text-[3.8rem] text-[2.8rem] font-extrabold leading-tight tracking-wide"
               >
                 M<span className="text-[#C62828]">.</span> Nauman
               </motion.p>
@@ -41,7 +41,7 @@ const Hero = () => {
                 transition={{ duration: 0.6 }}
                 className="mt-2 text-[1.2rem] flex items-center gap-2 font-medium"
               >
-                I am{" "}
+                I'm{" "}
                 <WordRotate
                   className="font-bold text-[#C62828] text-[1.5rem]"
                   words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer", "Cross Platform Developer"]}
