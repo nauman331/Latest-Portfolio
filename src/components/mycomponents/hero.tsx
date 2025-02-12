@@ -44,7 +44,7 @@ const Hero = () => {
                 I am{" "}
                 <WordRotate
                   className="font-bold text-[#C62828] text-[1.5rem]"
-                  words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer", "Cross Platform Developer"]}
+                  words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer"]}
                 />
               </motion.h2>
             </BoxReveal>
