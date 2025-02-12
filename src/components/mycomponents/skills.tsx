@@ -1,12 +1,30 @@
-interface SkillsProps {
-    skills: string[];
-}
+import { aboutskills } from "@/utils/exports";
 
-const SkillsComp: React.FC<SkillsProps> = ({ skills }) => {
+const SkillsComp: React.FC = () => {
     return (
-        <div>
-            {skills.map((skill, index) => (
-                <h1 key={index}>{skill}</h1>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full items-center justify-center">
+            {Object.entries(aboutskills).map(([skill, { icon, color }], index) => (
+                <div
+                    key={index}
+                    className="flex items-center gap-3 bg-white shadow-lg rounded-xl px-5 py-4 
+                     text-gray-900 font-semibold text-lg transition-all transform cursor-pointer"
+                    style={{
+                        transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = color;
+                        e.currentTarget.style.color = "#ffffff"; // Change text color to white
+                        e.currentTarget.querySelector("svg")!.style.color = "#ffffff"; // Change icon color to white
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "#ffffff"; // Reset background
+                        e.currentTarget.style.color = "#1f2937"; // Reset text color to default gray-900
+                        e.currentTarget.querySelector("svg")!.style.color = color; // Reset icon color
+                    }}
+                >
+                    {icon}
+                    <span>{skill}</span>
+                </div>
             ))}
         </div>
     );

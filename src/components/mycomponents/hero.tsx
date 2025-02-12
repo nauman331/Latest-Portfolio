@@ -85,7 +85,7 @@ const Hero = () => {
                 transition={{ duration: 0.6 }}
               >
                 <Button className="mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E] transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Explore My Work
+                  Check Out My Resume
                 </Button>
               </motion.div>
             </BoxReveal>
