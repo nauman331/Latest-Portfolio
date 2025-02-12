@@ -1,5 +1,5 @@
 "use client";
-
+import { JSX } from "react";
 import { motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 
