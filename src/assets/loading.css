@@ -1,4 +1,3 @@
-/* From Uiverse.io by JaydipPrajapati1910 */ 
 .loader {
     width: 48px;
     height: 48px;
@@ -22,7 +21,7 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: rgb(61, 106, 255);
+    background: #C62828;
     position: absolute;
     top: 0;
     left: 0;

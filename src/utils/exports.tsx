@@ -42,3 +42,27 @@ export const aboutskills: Record<string, { icon: JSX.Element; color: string }> =
   "Socket. IO": { icon: <SiSocketdotio className="text-gray-900 text-2xl" />, color: "#1e293b" },
   "Redux Toolkit": { icon: <SiRedux className="text-purple-500 text-2xl" />, color: "#9333ea" },
 };
+
+export const projects = [
+  {
+    title: "E-Commerce Website",
+    description: "A full-stack MERN e-commerce platform with PayPal integration.",
+    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
+    github: "#",
+    liveDemo: "#",
+  },
+  {
+    title: "Crypto Investment Platform",
+    description: "A blockchain-based investment platform for staking BNB.",
+    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
+    github: "#",
+    liveDemo: "#",
+  },
+  {
+    title: "Crypto Investment Platform",
+    description: "A blockchain-based investment platform for staking BNB.",
+    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
+    github: "#",
+    liveDemo: "#",
+  },
+];
