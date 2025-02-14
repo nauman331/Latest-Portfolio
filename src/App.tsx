@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Cursor from "./components/mycomponents/cursor";
 import Loader from "./components/mycomponents/loader";
 const Home = lazy(() => import("./screens/home"));
@@ -8,11 +8,18 @@ const Footer = lazy(() => import("./components/mycomponents/footer"));
 const Skills = lazy(() => import("./screens/skills"));
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const checkScreenSize = () => setIsMobile(window.innerWidth <= 768);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   return (
-    <div style={{cursor: "none"}}>
-      <Cursor />
+    <div style={{ cursor: isMobile ? "auto" : "none" }}>
+      {!isMobile && <Cursor />}
       <Suspense fallback={<Loader />}>
         <Nav />
         <Routes>
