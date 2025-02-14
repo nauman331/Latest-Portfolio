@@ -7,7 +7,7 @@ const SkillsComp: React.FC = () => {
                 <div
                     key={index}
                     className="flex items-center gap-3 bg-white shadow-lg rounded-xl px-5 py-4 
-                     text-gray-900 font-semibold text-lg transition-all transform cursor-pointer md:text-[1rem] text-[10px]"
+                     text-gray-900 md:font-semibold text-lg transition-all transform cursor-pointer md:text-[1rem] text-[10px] font-bold"
                     style={{
                         transition: "all 0.3s ease",
                     }}
