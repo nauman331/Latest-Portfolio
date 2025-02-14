@@ -6,14 +6,12 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [navbarFixed, setNavbarFixed] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 50);
       setShowScrollTop(window.scrollY > 300);
       setNavbarFixed(window.scrollY > 100);
     };
@@ -35,8 +33,8 @@ const Navbar = () => {
       {/* Navbar */}
       <nav
         className={`transition-all duration-300 ${navbarFixed
-            ? "fixed top-0 left-0 w-full bg-white/90 shadow-lg dark:bg-black/90 z-50"
-            : "relative top-5 bg-white/80 shadow-md dark:bg-black/80 rounded-full container mx-auto h-24 md:h-auto"
+          ? "fixed top-0 left-0 w-full bg-white/90 shadow-lg dark:bg-black/90 z-50"
+          : "relative top-5 bg-white/80 shadow-md dark:bg-black/80 rounded-full container mx-auto h-24 md:h-auto"
           }`}
       >
 
@@ -53,8 +51,8 @@ const Navbar = () => {
                 <Link
                   to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   className={`cursor-pointer transition-colors ${(item === "Home" && location.pathname === "/") || location.pathname === `/${item.toLowerCase()}`
-                      ? "text-red-600 font-semibold"
-                      : "hover:text-red-500"
+                    ? "text-red-600 font-semibold"
+                    : "hover:text-red-500"
                     }`}
                 >
                   {item}
