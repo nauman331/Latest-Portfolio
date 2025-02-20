@@ -48,7 +48,7 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-6 font-medium">
             {[
-              { name: "Home", href: "home" },
+              { name: "Home", href: "/" },
               { name: "Skills", href: "skills" },
               { name: "Projects", href: "projects" },
               { name: "Testimonials", href: "testimonials" },

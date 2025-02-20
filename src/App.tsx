@@ -7,6 +7,7 @@ const Nav = lazy(() => import("./components/mycomponents/navbar"));
 const Footer = lazy(() => import("./components/mycomponents/footer"));
 const Skills = lazy(() => import("./screens/skills"));
 const Projects = lazy(() => import("./screens/projects"));
+const Testinomials = lazy(() => import("./screens/testinomials"));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,7 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects" element={<Projects />} />       
+          <Route path="/testimonials" element={<Testinomials />} />       
         </Routes>
         <Footer />
       </Suspense>

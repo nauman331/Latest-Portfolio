@@ -80,8 +80,11 @@ const ReviewCard = ({
 
 const Testinomials = () => {
   return (
-    <section className="container">
-    <div className="relative py-28 flex w-full flex-col items-center justify-center overflow-hidden">
+    <section className="container my-28">
+       <h2 className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
+        My <span className="text-red-600">Clients</span>
+      </h2>
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
