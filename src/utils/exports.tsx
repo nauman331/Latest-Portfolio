@@ -50,6 +50,7 @@ export const projects = [
     techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
     github: "#",
     liveDemo: "#",
+    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Crypto Investment Platform",
@@ -57,6 +58,8 @@ export const projects = [
     techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
     github: "#",
     liveDemo: "#",
+    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
   },
   {
     title: "Crypto Investment Platform",
@@ -64,5 +67,7 @@ export const projects = [
     techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
     github: "#",
     liveDemo: "#",
+    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
   },
 ];
