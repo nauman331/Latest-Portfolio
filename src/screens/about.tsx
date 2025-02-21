@@ -19,14 +19,11 @@ const About = () => {
             </motion.div>
 
             {/* Right: Text Reveal - Animated Fade In from Right */}
-            <motion.div
+            <div
                 className="md:w-[70%] w-full flex items-center justify-center"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            >
+                >
                 <AboutText />
-            </motion.div>
+            </div>
         </section>
     );
 };
