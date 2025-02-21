@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="text-xl font-bold">
             <span className="text-black">M.</span>
-            <span className="text-red-500">Nauman</span>
+            <span className="text-[#C62828]">Nauman</span>
           </div>
 
           {/* Desktop Nav */}
@@ -96,7 +96,7 @@ const Navbar = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed z-[999] bottom-6 right-6 bg-red-500 text-white p-3 rounded-full shadow-lg 
+        className={`fixed z-[999] bottom-6 right-6 bg-[#C62828] text-white p-3 rounded-full shadow-lg 
         transition-all duration-300 transform 
         ${showScrollTop ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-0"} 
         hover:bg-red-600 hover:scale-110 active:scale-95`}

@@ -5,6 +5,7 @@ const Scroll = lazy(() => import("@/components/mycomponents/scroll"));
 const Skills = lazy(() => import("./skills"));
 const Projects = lazy(() => import("./projects"));
 const Testimonials = lazy(() => import("./testinomials"));
+const Contact = lazy(() => import("./contact"));
 
 const Home = () => {
   return (
@@ -23,6 +24,9 @@ const Home = () => {
       </Suspense>
       <Suspense fallback={<Loader />}>
         <Testimonials />
+      </Suspense>
+      <Suspense fallback={<Loader />}>
+        <Contact />
       </Suspense>
     </section>
   );

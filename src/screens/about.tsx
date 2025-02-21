@@ -1,19 +1,32 @@
+"use client";
 import Globe from "@/components/mycomponents/globe";
 import AboutText from "@/components/mycomponents/about";
+import { motion } from "framer-motion";
 
 const About = () => {
     return (
-        <section className="container flex flex-col md:flex-row items-center justify-center gap-10 py-14">
+        <section
+        className="container flex flex-col md:flex-row items-center justify-center gap-10 py-14">
             
-            {/* Left: Globe - Stays at top */}
-            <div className="md:w-[30%] w-full flex justify-center self-start">
+            {/* Left: Globe - Animated Slide In from Left */}
+            <motion.div
+                className="md:w-[30%] w-full flex justify-center self-start"
+                initial={{ opacity: 0, x: -50, rotate: -5 }}
+                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <Globe />
-            </div>
+            </motion.div>
 
-            {/* Right: Text Reveal - Adjusted height */}
-            <div className="md:w-[70%] w-full flex items-center justify-center">
+            {/* Right: Text Reveal - Animated Fade In from Right */}
+            <motion.div
+                className="md:w-[70%] w-full flex items-center justify-center"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            >
                 <AboutText />
-            </div>
+            </motion.div>
         </section>
     );
 };

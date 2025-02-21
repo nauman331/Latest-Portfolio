@@ -13,7 +13,7 @@ const Scroll = () => {
                 WebkitTextStroke: "1px rgba(255,255,255,0.1)",
             }}
         >
-            Frontend Developer &nbsp; | &nbsp; Backend Developer &nbsp; | &nbsp; Full Stack Developer &nbsp; | &nbsp; Android Developer &nbsp; | &nbsp; iOS Developer &nbsp; | &nbsp; Cross-Platform Developer
+            Frontend Developer &nbsp; | &nbsp; Backend Developer &nbsp; | &nbsp; Full Stack Developer &nbsp; | &nbsp; Android Developer &nbsp; | &nbsp; iOS Developer &nbsp; | &nbsp; Cross Platform Developer
         </VelocityScroll>
     );
 };

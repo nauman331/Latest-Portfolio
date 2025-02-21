@@ -8,6 +8,7 @@ const Footer = lazy(() => import("./components/mycomponents/footer"));
 const Skills = lazy(() => import("./screens/skills"));
 const Projects = lazy(() => import("./screens/projects"));
 const Testinomials = lazy(() => import("./screens/testinomials"));
+const Contact = lazy(() => import("./screens/contact"));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,8 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />       
-          <Route path="/testimonials" element={<Testinomials />} />       
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/testimonials" element={<Testinomials />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </Suspense>

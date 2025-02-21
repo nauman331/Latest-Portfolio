@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 text-center md:text-left">
-        
+
         {/* Brand Name */}
         <div className="text-2xl font-bold">
-          M. <span className="text-red-600">Nauman</span>
+          M. <span className="text-[#C62828]">Nauman</span>
         </div>
 
         {/* Navigation Links */}

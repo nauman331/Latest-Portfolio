@@ -1,15 +1,27 @@
+"use client";
 import { aboutskills } from "@/utils/exports";
+import { motion } from "framer-motion";
 
 const SkillsComp: React.FC = () => {
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full items-center justify-center">
+        <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full items-center justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+        >
             {Object.entries(aboutskills).map(([skill, { icon, color }], index) => (
-                <div
+                <motion.div
                     key={index}
                     className="flex items-center gap-3 bg-white shadow-lg rounded-xl px-5 py-4 
                      text-gray-900 md:font-semibold text-lg transition-all transform cursor-pointer font-bold"
-                    style={{
-                        transition: "all 0.3s ease",
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{
+                        y: -5,
+                        boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = color;
@@ -24,9 +36,9 @@ const SkillsComp: React.FC = () => {
                 >
                     {icon}
                     <span className="md:text-[1rem] text-[10px]">{skill}</span>
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     );
 };
 

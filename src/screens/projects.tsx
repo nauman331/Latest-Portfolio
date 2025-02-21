@@ -1,3 +1,4 @@
+"use client";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { projects } from "@/utils/exports";
@@ -7,33 +8,55 @@ const Projects = () => {
   return (
     <motion.section
       className="w-full bg-white py-20 px-4 md:px-8"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      viewport={{ once: false }}
     >
-      <h2 className="text-4xl font-bold text-center mb-14 text-gray-900 tracking-tight">
-        Featured <span className="text-red-600">Projects</span>
-      </h2>
+      {/* Section Heading */}
+      <motion.h2
+        className="text-4xl font-bold text-center mb-14 text-gray-900 tracking-tight"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+      >
+        Featured <span className="text-[#C62828]">Projects</span>
+      </motion.h2>
 
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Project Cards Grid */}
+      <motion.div
+        className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }, // Smoother stagger
+          },
+        }}
+      >
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.025, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)" }}
-            transition={{ duration: 0.3 }}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0px 12px 25px rgba(0, 0, 0, 0.08)",
+            }}
             className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all flex flex-col"
           >
             {/* Image with Zoom Lens */}
             <div className="relative overflow-hidden">
-              <Lens
-                zoomFactor={3} // More zoom for better clarity
-                lensSize={120} // Slightly larger lens for a modern feel
-                isStatic={false}
-              >
+              <Lens zoomFactor={2.5} lensSize={110} isStatic={false}>
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-44 object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-44 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
                 />
               </Lens>
             </div>
@@ -47,15 +70,17 @@ const Projects = () => {
                 {project.description}
               </p>
 
-              {/* Tech Stack Badges */}
+              {/* Tech Stack Badges with Bounce Effect */}
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.techStack.map((tech, i) => (
-                  <span
+                  <motion.span
                     key={i}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
                     className="px-2.5 py-1 text-xs bg-gray-100 text-gray-800 rounded-md shadow-sm"
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </div>
@@ -65,30 +90,34 @@ const Projects = () => {
               <p className="text-xs text-gray-500 font-medium">View Project</p>
               <div className="flex gap-3">
                 {project.github && (
-                  <a
+                  <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-gray-900 transition-colors"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                   >
                     <FaGithub size={18} />
-                  </a>
+                  </motion.a>
                 )}
                 {project.liveDemo && (
-                  <a
+                  <motion.a
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-red-600 hover:text-red-800 transition-colors"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                   >
                     <FaExternalLinkAlt size={16} />
-                  </a>
+                  </motion.a>
                 )}
               </div>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

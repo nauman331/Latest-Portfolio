@@ -93,11 +93,16 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="relative w-full md:w-1/2 flex items-center justify-center p-6">
+        <div className="relative md:mt-48 flex items-center mt-28 justify-centerw-full md:w-1/2 p-6"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -100, 0] }} // Floating effect
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              y: { repeat: Infinity, duration: 2, ease: "easeInOut" }, // Smooth floating
+            }}
             className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full shadow-xl overflow-hidden border-[8px] border-[#C62828] hover:border-[#9C27B0] transition-all duration-300"
           >
             {/* Image Overlay Effect */}
@@ -108,6 +113,7 @@ const Hero = () => {
               className="w-full h-full object-cover rounded-full hover:scale-105 transition-all duration-300"
             />
           </motion.div>
+
         </div>
       </section>
     </>

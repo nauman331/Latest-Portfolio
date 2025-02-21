@@ -82,7 +82,7 @@ const Testinomials = () => {
   return (
     <section className="container my-28">
        <h2 className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
-        My <span className="text-red-600">Clients</span>
+        My <span className="text-[#C62828]">Clients</span>
       </h2>
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
