@@ -2,6 +2,21 @@ import { JSX } from "react";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import { SiTypescript, SiShadcnui, SiTailwindcss, SiFramer, SiAndroidstudio, SiMysql, SiSocketdotio, SiRedux } from "react-icons/si";
 import { TbHexagonLetterE } from "react-icons/tb";
+import project1 from "../assets/projects/project1.png";
+import project2 from "../assets/projects/project2.png";
+import project3 from "../assets/projects/project3.png";
+import project4 from "../assets/projects/project4.png";
+import project5 from "../assets/projects/project5.png";
+import project6 from "../assets/projects/project6.png";
+import project7 from "../assets/projects/project7.png";
+import project8 from "../assets/projects/project8.png";
+
+import client1 from "../assets/clients/client1.webp";
+import client2 from "../assets/clients/client2.webp";
+import client3 from "../assets/clients/client3.webp";
+import client4 from "../assets/clients/client4.webp";
+import client5 from "../assets/clients/client5.webp";
+import client6 from "../assets/clients/client6.png";
 
 export const skills = [
   "typescript",
@@ -50,7 +65,7 @@ export const projects = [
     techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
     github: "#",
     liveDemo: "#",
-    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: project1
   },
   {
     title: "Crypto Investment Platform",
@@ -58,7 +73,7 @@ export const projects = [
     techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
     github: "#",
     liveDemo: "#",
-    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: project2
 
   },
   {
@@ -67,7 +82,87 @@ export const projects = [
     techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
     github: "#",
     liveDemo: "#",
-    image: "https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: project3
+  },
+  {
+    title: "E-Commerce Website",
+    description: "A full-stack MERN e-commerce platform with PayPal integration.",
+    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
+    github: "#",
+    liveDemo: "#",
+    image: project4
+  },
+  {
+    title: "Crypto Investment Platform",
+    description: "A blockchain-based investment platform for staking BNB.",
+    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
+    github: "#",
+    liveDemo: "#",
+    image: project5
 
+  },
+  {
+    title: "Crypto Investment Platform",
+    description: "A blockchain-based investment platform for staking BNB.",
+    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
+    github: "#",
+    liveDemo: "#",
+    image: project6
+  },
+  {
+    title: "E-Commerce Website",
+    description: "A full-stack MERN e-commerce platform with PayPal integration.",
+    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
+    github: "#",
+    liveDemo: "#",
+    image: project7
+  },
+  {
+    title: "Crypto Investment Platform",
+    description: "A blockchain-based investment platform for staking BNB.",
+    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
+    github: "#",
+    liveDemo: "#",
+    image: project8
+
+  },
+];
+
+export const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: client1
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: client2
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: client3
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: client4
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: client5
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: client6
   },
 ];
