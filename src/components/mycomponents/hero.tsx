@@ -19,9 +19,9 @@ const Hero = () => {
         )}
       />
 
-      <section className="container relative flex flex-col md:flex-row items-center justify-center overflow-hidden rounded-lg bg-background h-auto md:h-[600px] w-full">
+      <section className="container flex flex-col md:flex-row items-center justify-center rounded-lg bg-background h-auto md:h-[600px] w-full">
         {/* Left Section - Text Content */}
-        <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center mt-14 md:mt-auto md:text-left">
+        <div className="w-full h-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center">
           <div className="max-w-lg space-y-6">
             <BoxReveal boxColor={"#C62828"} duration={0.5}>
               <motion.p
@@ -93,20 +93,20 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="relative md:mt-48 flex items-center mt-28 justify-center w-full md:w-1/2 p-6"
+        <div className="h-full flex items-center justify-center w-full md:w-1/2 p-6"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0, y: [0, -100, 0] }} // Floating effect
+            initial={{ opacity: 0, scale: 0.9, rotate: -5, }}
+            animate={{ opacity: 1, scale: 1, rotate: 0, y: [100, -100, 100] }} // Floating effect
             transition={{
               duration: 0.8,
               ease: "easeOut",
               y: { repeat: Infinity, duration: 2, ease: "easeInOut" }, // Smooth floating
             }}
-            className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full shadow-xl overflow-hidden border-[8px] border-[#C62828] hover:border-[#9C27B0] transition-all duration-300"
+            className=" w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full shadow-xl overflow-hidden border-[8px] border-[#C62828] hover:border-[#9C27B0] transition-all duration-300"
           >
             {/* Image Overlay Effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#C62828] via-transparent to-transparent opacity-30" />
+            <div className=" inset-0 bg-gradient-to-t from-[#C62828] via-transparent to-transparent opacity-30" />
             <img
               src={nauman}
               alt="M. Nauman"

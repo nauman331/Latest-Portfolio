@@ -38,12 +38,13 @@ const Navbar = () => {
   return (
     <>
       <ScrollProgress />
+      <div className="flex container items-center justify-center">
       <nav
-        className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
+        className={`w-full transition-all duration-300 z-50 
           ${
             isScrolled
-              ? "bg-white/90 backdrop-blur-md shadow-md py-4 border-b border-gray-200"
-              : "md:top-10 top-5 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-md rounded-full px-8 py-3 w-[90%] max-w-4xl border border-gray-200"
+              ? "fixed top-0 left-0 right-0 w-screen bg-white/90 backdrop-blur-md shadow-md py-4 border-b border-gray-200"
+              : "mt-8 transform bg-white/80 backdrop-blur-md shadow-md rounded-full px-8 py-5 w-full border border-gray-200"
           }`}
       >
         <div className="flex items-center justify-between mx-auto max-w-6xl px-6">
@@ -75,7 +76,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-
+      </div>
       {/* Mobile Menu with Blur Background */}
       {isOpen && (
         <>
