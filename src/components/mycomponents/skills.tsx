@@ -14,8 +14,8 @@ const SkillsComp: React.FC = () => {
             {Object.entries(aboutskills).map(([skill, { icon, color }], index) => (
                 <motion.div
                     key={index}
-                    className="flex items-center gap-3 bg-white shadow-lg rounded-xl px-5 py-4 
-                     text-gray-900 md:font-semibold text-lg transition-all transform cursor-pointer font-bold"
+                    className="flex items-center gap-3 rounded-xl px-5 py-4 
+                     bg-gray-200 border border-gray-300 text-gray-900 shadow-md md:font-semibold text-lg transition-all transform cursor-pointer font-bold"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}

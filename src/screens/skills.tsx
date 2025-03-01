@@ -3,7 +3,8 @@ import About from "./about";
 
 const Skills = () => {
     return (
-        <section className="container  my-28">
+        <section className=" bg-gray-100 my-28">
+            <div className="container">
              <h2 className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
         My <span className="text-[#C62828]">Skills</span>
       </h2>
@@ -13,6 +14,7 @@ const Skills = () => {
             </div>
             {/* About Section*/}
             <About />
+            </div>
         </section>
     );
 };
