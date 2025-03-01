@@ -43,7 +43,7 @@ const Hero = () => {
               >
                 I'm{" "}
                 <WordRotate
-                  className="font-bold text-[#C62828] md:text-[1.5rem] text-[1rem]"
+                  className="font-bold text-[#C62828] text-[1.5rem]"
                   words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer"]}
                 />
               </motion.h2>
@@ -54,7 +54,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-3 text-gray-700 text-[1.1rem] leading-relaxed"
+                className="mt-3 text-gray-700 text-[1.1rem] text-left leading-relaxed"
               >
                 <p>
                   🚀 Passionate about creating{" "}
@@ -93,7 +93,7 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="relative md:mt-48 flex items-center mt-28 justify-centerw-full md:w-1/2 p-6"
+        <div className="relative md:mt-48 flex items-center mt-28 justify-center w-full md:w-1/2 p-6"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5 }}

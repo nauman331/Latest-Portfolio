@@ -7,6 +7,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const links = [
+    { name: "Home", href: "/" },
+    { name: "Skills", href: "skills" },
+    { name: "Projects", href: "projects" },
+    { name: "Testimonials", href: "testimonials" },
+    { name: "Contact", href: "contact" },
+  ];
 
   // Handle navbar transition on scroll
   useEffect(() => {
@@ -33,9 +40,10 @@ const Navbar = () => {
       <ScrollProgress />
       <nav
         className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
-          ${isScrolled 
-            ? "bg-white/90 backdrop-blur-md shadow-md py-4 border-b border-gray-200" 
-            : "top-4 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-md rounded-full px-8 py-3 w-[90%] max-w-4xl border border-gray-200"
+          ${
+            isScrolled
+              ? "bg-white/90 backdrop-blur-md shadow-md py-4 border-b border-gray-200"
+              : "md:top-10 top-5 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-md shadow-md rounded-full px-8 py-3 w-[90%] max-w-4xl border border-gray-200"
           }`}
       >
         <div className="flex items-center justify-between mx-auto max-w-6xl px-6">
@@ -47,13 +55,7 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-6 font-medium">
-            {[
-              { name: "Home", href: "/" },
-              { name: "Skills", href: "skills" },
-              { name: "Projects", href: "projects" },
-              { name: "Testimonials", href: "testimonials" },
-              { name: "Contact", href: "contact" },
-            ].map((item) => (
+            {links.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
@@ -65,21 +67,27 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Nav Button */}
-          <button className="md:hidden text-gray-700" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden text-gray-700"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="absolute top-16 right-4 bg-white/90 backdrop-blur-md w-48 shadow-lg rounded-lg py-4 flex flex-col space-y-4 items-center md:hidden border border-gray-200">
-            {[
-              { name: "Home", href: "home" },
-              { name: "Skills", href: "skills" },
-              { name: "Projects", href: "projects" },
-              { name: "Testimonials", href: "testimonials" },
-              { name: "Contact", href: "contact" },
-            ].map((item) => (
+      {/* Mobile Menu with Blur Background */}
+      {isOpen && (
+        <>
+          {/* Overlay for Blur Effect */}
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-md z-40 transition-opacity"
+            onClick={() => setIsOpen(false)} // Close menu when clicking outside
+          ></div>
+
+          {/* Mobile Menu */}
+          <div className="fixed top-16 right-4 bg-white w-48 shadow-lg rounded-lg py-4 flex flex-col space-y-4 items-center md:hidden border border-gray-200 z-50">
+            {links.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
@@ -90,15 +98,19 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-        )}
-      </nav>
+        </>
+      )}
 
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
         className={`fixed z-[999] bottom-6 right-6 bg-[#C62828] text-white p-3 rounded-full shadow-lg 
         transition-all duration-300 transform 
-        ${showScrollTop ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-0"} 
+        ${
+          showScrollTop
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-10 scale-0"
+        } 
         hover:bg-red-600 hover:scale-110 active:scale-95`}
       >
         <ArrowUp size={24} className="animate-bounce-once" />
