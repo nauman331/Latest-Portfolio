@@ -4,6 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { projects } from "@/utils/exports";
 import { Lens } from "@/components/magicui/lens";
+import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -28,7 +29,7 @@ const Projects = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         Featured <span className="text-[#C62828]">Projects</span>
-        <h6 className="text-sm text-gray-500 mt-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
+        <h6 className="text-sm text-gray-500 p-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
       </motion.h2>
 
       <motion.div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,9 +111,9 @@ const Projects = () => {
             href="https://github.com/your-github-profile"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#C62828] font-semibold hover:underline"
+            className="text-[#C62828] font-semibold hover:underline flex items-center justify-center"
           >
-            View All Projects on GitHub
+            View More Projects on GitHub <ArrowUpRight />
           </a>
         )}
       </div>

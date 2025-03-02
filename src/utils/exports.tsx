@@ -10,6 +10,7 @@ import project5 from "../assets/projects/project5.png";
 import project6 from "../assets/projects/project6.png";
 import project7 from "../assets/projects/project7.png";
 import project8 from "../assets/projects/project8.png";
+import project9 from "../assets/projects/project9.png";
 
 import client1 from "../assets/clients/client1.webp";
 import client2 from "../assets/clients/client2.webp";
@@ -60,70 +61,76 @@ export const aboutskills: Record<string, { icon: JSX.Element; color: string }> =
 
 export const projects = [
   {
-    title: "E-Commerce Website",
-    description: "A full-stack MERN e-commerce platform with PayPal integration.",
-    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
-    github: "#",
-    liveDemo: "#",
+    title: "Al Bashayera Auto Auctions",
+    description: "Worked as supervisor and frontend developer for live auctions and selling system of cars with admin panel",
+    techStack: ["React", "TypeScript", "Scss", "Node.js", "Express JS", "MongoDB", "RTK", "Socket.io"],
+    github: "https://github.com/nauman331/Car_Auction",
+    liveDemo: "https://abaautoauctions.com/",
     image: project1
   },
   {
-    title: "Crypto Investment Platform",
-    description: "A blockchain-based investment platform for staking BNB.",
-    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
-    github: "#",
-    liveDemo: "#",
+    title: "CEP Exams",
+    description: "Enhanced user Expereince on CEP Exams website(NextJs + TailwindCss) by adding features like search bar and pagination etc.",
+    techStack: ["RTK", "TailwindCSS", "NextJS"],
+    liveDemo: "https://cepexam.com/",
     image: project2
 
   },
   {
-    title: "Crypto Investment Platform",
-    description: "A blockchain-based investment platform for staking BNB.",
-    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
-    github: "#",
-    liveDemo: "#",
+    title: "Zero To Hero DSA Repo",
+    description: "My daily routine for learning something new and improving logic building",
+    techStack: ["Javascript", "DSA", "Logic Building"],
+    github: "https://github.com/nauman331/DSA-Javascript",
     image: project3
   },
   {
-    title: "E-Commerce Website",
-    description: "A full-stack MERN e-commerce platform with PayPal integration.",
-    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
-    github: "#",
-    liveDemo: "#",
+    title: "ZOI Network",
+    description: "My Early full-stack mobile mining web application with admin panel including refferal system and tasks",
+    techStack: ["React", "ZOD", "CSS", "Node.js", "MongoDB", "Express JS"],
+    github: "https://github.com/nauman331/zoinetwork",
+    liveDemo: "https://zoi-network.vercel.app",
     image: project4
   },
   {
-    title: "Crypto Investment Platform",
-    description: "A blockchain-based investment platform for staking BNB.",
-    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
-    github: "#",
-    liveDemo: "#",
+    title: "Flappy Base",
+    description: "A frontend pre-sale landing page for crypto coins",
+    techStack: ["NextJS", "TailwindCSS"],
+    liveDemo: "https://flappybird-gules-sigma.vercel.app/",
     image: project5
 
   },
   {
-    title: "Crypto Investment Platform",
-    description: "A blockchain-based investment platform for staking BNB.",
-    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
-    github: "#",
-    liveDemo: "#",
+    title: "Prime BNB",
+    description: "A blockchain-based opBNB(crypto) investment platform with web3.0 including refferal and rewards system.",
+    techStack: ["Solidity JS", "React", "TailwindCSS", "Typescript", "web3.js"],
+    github: "https://github.com/nauman331/PrimeBNB",
+    liveDemo: "https://prime-bnb.vercel.app",
     image: project6
   },
   {
-    title: "E-Commerce Website",
-    description: "A full-stack MERN e-commerce platform with PayPal integration.",
-    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "MongoDB"],
-    github: "#",
-    liveDemo: "#",
+    title: "1Core",
+    description: "A crypto mining responsive dashboard page for one of my client",
+    techStack: ["HTML", "CSS", "Responsive Design"],
+    github: "https://github.com/nauman331/onecore.github.io",
+    liveDemo: "https://nauman331.github.io/onecore.github.io/",
     image: project7
   },
   {
-    title: "Crypto Investment Platform",
-    description: "A blockchain-based investment platform for staking BNB.",
-    techStack: ["Solidity", "React", "TailwindCSS", "Node.js"],
-    github: "#",
-    liveDemo: "#",
+    title: "My Old Portfolio",
+    description: "My second portfolio website",
+    techStack: [ "React", "TailwindCSS", "Framer Motion"],
+    github: "https://github.com/nauman331/My-Portfolio",
+    liveDemo: "https://mnauman-portfolio.vercel.app/",
     image: project8
+
+  },
+  {
+    title: "My First Portfolio",
+    description: "One of my first portfolio website",
+    techStack: ["React", "TailwindCSS", "Framer Motion"],
+    github: "https://github.com/nauman331/Nauman-Portfolio",
+    liveDemo: "https://naumans-portfolio.vercel.app/",
+    image: project9
 
   },
 ];
