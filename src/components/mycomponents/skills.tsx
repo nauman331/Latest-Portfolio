@@ -15,7 +15,7 @@ const SkillsComp: React.FC = () => {
                 <motion.div
                     key={index}
                     className="flex items-center gap-3 rounded-xl px-5 py-4 
-                     bg-gray-200 border border-gray-300 text-gray-900 shadow-md md:font-semibold text-lg transition-all transform cursor-pointer font-bold"
+                     bg-[#e5e7eb] border border-gray-300 text-gray-900 shadow-md md:font-semibold text-lg transition-all transform cursor-pointer font-bold"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -25,11 +25,11 @@ const SkillsComp: React.FC = () => {
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = color;
-                        e.currentTarget.style.color = "#ffffff"; // Change text color to white
-                        e.currentTarget.querySelector("svg")!.style.color = "#ffffff"; // Change icon color to white
+                        e.currentTarget.style.color = "#e5e7eb"; // Change text color to white
+                        e.currentTarget.querySelector("svg")!.style.color = "#e5e7eb"; // Change icon color to white
                     }}
                     onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "#ffffff"; // Reset background
+                        e.currentTarget.style.backgroundColor = "#e5e7eb"; // Reset background
                         e.currentTarget.style.color = "#1f2937"; // Reset text color to default gray-900
                         e.currentTarget.querySelector("svg")!.style.color = color; // Reset icon color
                     }}

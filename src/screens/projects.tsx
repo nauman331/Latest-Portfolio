@@ -28,6 +28,7 @@ const Projects = () => {
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         Featured <span className="text-[#C62828]">Projects</span>
+        <h6 className="text-sm text-gray-500 mt-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
       </motion.h2>
 
       <motion.div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

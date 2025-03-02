@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ArrowUp } from "lucide-react";
 import { ScrollProgress } from "../magicui/scroll-progress";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
   const links = [
     { name: "Home", href: "/" },
     { name: "Skills", href: "skills" },
@@ -25,9 +27,11 @@ const Navbar = () => {
         setShowScrollTop(false);
       }
     };
+
     const handleResize = () => {
       setIsOpen(false);
     };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
     return () => {
@@ -83,8 +87,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             <div
-              className={`relative z-50 bg-white w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50 transform transition-transform duration-700 ease-out 
-            ${isOpen ? "animate-bounce-slide-in" : "translate-x-full"}`}
+              className="relative z-50 bg-white w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50 transform transition-transform duration-700 ease-out animate-bounce-slide-in"
             >
               {links.map((item) => (
                 <Link
@@ -100,37 +103,35 @@ const Navbar = () => {
           </div>
         </>
       )}
-      <button
-        onClick={scrollToTop}
-        className={`fixed z-[999] bottom-6 right-6 bg-[#C62828] text-white p-3 rounded-full shadow-lg 
-        transition-all duration-300 transform 
-        ${showScrollTop
-            ? "opacity-100 translate-y-0 scale-100"
-            : "opacity-0 translate-y-10 scale-0"
-          } 
-        hover:bg-red-600 hover:scale-110 active:scale-95`}
-      >
-        <ArrowUp size={24} className="animate-bounce-once" />
-      </button>
+
+      {showScrollTop ? (
+        <button
+          onClick={scrollToTop}
+          className="fixed z-[999] bottom-6 right-6 bg-[#C62828] text-white p-3 rounded-full shadow-lg 
+            transition-all duration-300 transform opacity-100 translate-y-0 scale-100 hover:bg-red-600 hover:scale-110 active:scale-95 animate-fade-in"
+        >
+          <ArrowUp size={24} />
+        </button>
+      ) : (
+        <a
+          href="https://wa.me/YOUR_NUMBER"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed z-[999] bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg 
+            transition-all duration-300 transform opacity-100 translate-y-0 scale-100 hover:bg-green-600 hover:scale-110 active:scale-95 animate-fade-in"
+        >
+          <FaWhatsapp size={24} />
+        </a>
+      )}
+
       <style>
         {`
-          @keyframes bounceSlideIn {
-            0% { transform: translateX(100%) rotate(10deg); opacity: 0; }
-            50% { transform: translateX(-10px) rotate(-5deg); opacity: 1; }
-            70% { transform: translateX(5px) rotate(2deg); }
-            100% { transform: translateX(0) rotate(0); }
+          @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
           }
-          .animate-bounce-slide-in {
-            animation: bounceSlideIn 0.6s ease-out forwards;
-          }
-
-          @keyframes bounceOnce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-          }
-          .animate-bounce-once {
-            animation: bounceOnce 0.4s ease-in-out;
+          .animate-fade-in {
+            animation: fadeIn 0.4s ease-in-out;
           }
         `}
       </style>

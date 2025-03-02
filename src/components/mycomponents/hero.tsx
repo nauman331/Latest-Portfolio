@@ -57,16 +57,16 @@ const Hero = () => {
                 className="mt-3 text-gray-700 text-[1.1rem] text-left leading-relaxed"
               >
                 <p>
-                  🚀 Passionate about creating{" "}
+                  🚀 Full Stack Engineer with{" "}
                   <span className="font-semibold text-[#C62828]">
-                    modern web applications
+                    1 year of learning and 2 years of freelancing
                   </span>{" "}
-                  with sleek UI/UX.
+                  experience.
                 </p>
                 <p>
                   💻 Experienced in{" "}
                   <span className="font-semibold text-[#C62828]">
-                    MERN, TypeScript, React Native, Tailwind CSS
+                    MERN, TypeScript, React Native, Redux Toolkit, Socket.io, Tailwind CSS
                   </span>
                   , and{" "}
                   <span className="font-semibold text-[#C62828]">

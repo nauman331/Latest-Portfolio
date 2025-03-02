@@ -130,39 +130,39 @@ export const projects = [
 
 export const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    name: "AR Saleemi",
+    username: "@arsaleemi",
+    body: "I had a great experience working with Muhammad Nauman. They improved the user experience on my website by implementing effective search features and pagination. Their attention to detail and commitment to enhancing usability were impressive. I highly recommend Muhammad Nauman for UX-related projects.",
     img: client1
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    name: "Edu Topia",
+    username: "@edutopia",
+    body: "Very fast developer! compeleted full webpage only in two days including all the responsive and animation work",
     img: client2
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Mr Nabeel",
+    username: "@mrnabeel",
+    body: "The portfolio website you made for my sister zahra mauji is very beautifull. She loved it very much. I will love to work with you again",
     img: client3
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Roi MH",
+    username: "@roimh",
+    body: "I already working with Muhammad Nauman from 1 year as he always provides best results in making responsive websites and aligning dashboards",
     img: client4
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Graphion Media",
+    username: "@graphionmedia",
+    body: "Built very sleek and beautifull design website, loved his work and recommend for any frontend work.Highly recomended from me because of his elegent work",
     img: client5
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Al Bashayera",
+    username: "@albashayera",
+    body: "Nauman, I just have to say, this platform is amazing! Everything runs so smoothly, and the whole bidding process feels effortless. It’s super easy to use, and the design looks really professional. I can tell a lot of effort went into this. Honestly, great job—this feels like a high-quality auction site!",
     img: client6
   },
 ];
