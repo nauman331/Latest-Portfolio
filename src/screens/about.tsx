@@ -11,8 +11,8 @@ const About = () => {
             {/* Left: Globe - Animated Slide In from Left */}
             <motion.div
                 className="md:w-[30%] w-full flex justify-center self-start"
-                initial={{ opacity: 0, x: -50, rotate: -5 }}
-                whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0, rotate: 0 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 360 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <Globe />

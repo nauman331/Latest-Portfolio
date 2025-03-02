@@ -1,8 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { reviews } from "@/utils/exports";
-
-
+import { motion } from "motion/react";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -45,9 +44,13 @@ const ReviewCard = ({
 const Testinomials = () => {
   return (
     <section className="container my-28">
-       <h2 className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
+       <motion.h2 
+       initial={{ opacity: 0, y: -50 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
+       className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
         My <span className="text-[#C62828]">Clients</span>
-      </h2>
+      </motion.h2>
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (

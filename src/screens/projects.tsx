@@ -24,9 +24,9 @@ const Projects = () => {
     >
       <motion.h2
         className="text-4xl font-bold text-center mb-14 text-gray-900 tracking-tight"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
       >
         Featured <span className="text-[#C62828]">Projects</span>
         <h6 className="text-sm text-gray-500 p-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
