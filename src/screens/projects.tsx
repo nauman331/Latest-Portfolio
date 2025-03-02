@@ -45,7 +45,7 @@ const Projects = () => {
             <div className="relative overflow-hidden">
               <Lens zoomFactor={2.5} lensSize={110} isStatic={false}>
                 <motion.img
-                 initial={{opacity: 0, scale: 0}}
+                 initial={{opacity: 0, scale: 0.5}}
                  whileInView={{opacity: 1, scale: 1}}
                  transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
                   src={project.image}
