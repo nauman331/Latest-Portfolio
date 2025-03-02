@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 import { motion } from "framer-motion";
 import { WordRotate } from "@/components/magicui/word-rotate";
+import { Facebook, Github, Linkedin } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 
 const Hero = () => {
@@ -19,6 +21,24 @@ const Hero = () => {
         )}
       />
 
+      <motion.div drag dragConstraints={{ top: -125, left: -12, right: 400, bottom: 300 }} whileDrag={{ scale: 1.2 }} dragElastic={.1} whileHover={{ cursor: 'grabbing' }} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} className='bg-white w-14 md:top-48 top-32 border border-gray-200 h-48 absolute hidden md:flex flex-col justify-evenly items-center shadow-lg'
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <a href='https://github.com/nauman331' className='hover:text-[#C62828] cursor-pointer'>
+          <Github />
+        </a>
+        <a href='https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L' className='hover:text-[#C62828] cursor-pointer'>
+          <Facebook />
+        </a>
+        <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-[#C62828] cursor-pointer'>
+          <Linkedin />
+        </a>
+        <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-[#C62828] cursor-pointer'>
+          <FaTiktok />
+        </a>
+      </motion.div>
       <section className="container flex flex-col md:flex-row items-center justify-center rounded-lg bg-background h-auto md:h-[600px] w-full">
         {/* Left Section - Text Content */}
         <div className="w-full h-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center">

@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ArrowUp } from "lucide-react";
 import { ScrollProgress } from "../magicui/scroll-progress";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { Facebook, Github, Linkedin } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,6 +100,20 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
+              <div className="flex w-full items-center justify-center gap-5 flex-wrap mt-10">
+                <a href='https://github.com/nauman331' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
+                  <Github />
+                </a>
+                <a href='https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
+                  <Facebook />
+                </a>
+                <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
+                  <Linkedin />
+                </a>
+                <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='bg-[#C62828] text-white p-3 rounded-full cursor-pointer'>
+                  <FaTiktok />
+                </a>
+              </div>
             </div>
           </div>
         </>
