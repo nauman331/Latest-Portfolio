@@ -32,7 +32,11 @@ const Projects = () => {
         <h6 className="text-sm text-gray-500 p-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
       </motion.h2>
 
-      <motion.div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div 
+      initial={{opacity: 0, y: 50}}
+      whileInView={{opacity: 1, y: 0}}
+      transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
+      className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.slice(0, visibleProjects).map((project, index) => (
           <motion.div
             key={index}
@@ -41,6 +45,9 @@ const Projects = () => {
             <div className="relative overflow-hidden">
               <Lens zoomFactor={2.5} lensSize={110} isStatic={false}>
                 <motion.img
+                 initial={{opacity: 0, scale: 0}}
+                 whileInView={{opacity: 1, scale: 1}}
+                 transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
                   src={project.image}
                   alt={project.title}
                   className="w-full h-44 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
