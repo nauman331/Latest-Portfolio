@@ -39,7 +39,7 @@ const Contact = () => {
         <motion.div
           className="w-full md:w-1/2 flex-grow"
           variants={{
-            hidden: { opacity: 0, x: -50 },
+            hidden: { opacity: 0, x: -20 },
             visible: { opacity: 1, x: 0 },
           }}
           transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
@@ -53,7 +53,7 @@ const Contact = () => {
         <motion.div
           className="w-full md:w-1/2 flex-grow"
           variants={{
-            hidden: { opacity: 0, x: 50 },
+            hidden: { opacity: 0, x: 20 },
             visible: { opacity: 1, x: 0 },
           }}
           transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
