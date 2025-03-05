@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
-import { SiTypescript, SiShadcnui, SiTailwindcss, SiFramer, SiAndroidstudio, SiMysql, SiSocketdotio, SiRedux } from "react-icons/si";
-import { TbHexagonLetterE } from "react-icons/tb";
+import { SiTypescript, SiShadcnui, SiTailwindcss, SiGoogleassistant, SiFramer, SiAndroidstudio, SiMysql, SiSocketdotio, SiRedux, SiFigma } from "react-icons/si";
+import { TbCircleLetterMFilled, TbHexagonLetterE } from "react-icons/tb";
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import project3 from "../assets/projects/project3.png";
@@ -18,6 +18,7 @@ import client3 from "../assets/clients/client3.webp";
 import client4 from "../assets/clients/client4.webp";
 import client5 from "../assets/clients/client5.webp";
 import client6 from "../assets/clients/client6.png";
+import { BsFiletypeScss } from "react-icons/bs";
 
 export const skills = [
   "typescript",
@@ -53,6 +54,10 @@ export const aboutskills: Record<string, { icon: JSX.Element; color: string }> =
   "Shadcn UI": { icon: <SiShadcnui className="text-gray-900 text-2xl" />, color: "#18181b" },
   "Typescript": { icon: <SiTypescript className="text-blue-600 text-2xl" />, color: "#2563eb" },
   "Framer Motion": { icon: <SiFramer className="text-pink-500 text-2xl" />, color: "#ec4899" },
+  "Figma": { icon: <SiFigma className="text-pink-500 text-2xl" />, color: "#f472b6" },
+  "AI Assistance": { icon: <SiGoogleassistant className="text-gray-500 text-2xl" />, color: "#64748b" },
+  "Scss": { icon: <BsFiletypeScss className="text-pink-400 text-2xl" />, color: "#f472b6" },
+  "Magic UI": { icon: <TbCircleLetterMFilled className="text-purple-500 text-2xl" />, color: "#a855f7" },
   "Mongo DB": { icon: <FaDatabase className="text-green-700 text-2xl" />, color: "#15803d" },
   "MySQL": { icon: <SiMysql className="text-orange-800 text-2xl" />, color: "#c2410c" },
   "Socket. IO": { icon: <SiSocketdotio className="text-gray-900 text-2xl" />, color: "#1e293b" },
@@ -118,7 +123,7 @@ export const projects = [
   {
     title: "My Old Portfolio",
     description: "My second portfolio website",
-    techStack: [ "React", "TailwindCSS", "Framer Motion"],
+    techStack: ["React", "TailwindCSS", "Framer Motion"],
     github: "https://github.com/nauman331/My-Portfolio",
     liveDemo: "https://mnauman-portfolio.vercel.app/",
     image: project8

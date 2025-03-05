@@ -41,8 +41,8 @@ const Hero = () => {
       </motion.div>
       <section className="container flex flex-col md:flex-row items-center justify-center rounded-lg bg-background h-auto md:h-[600px] w-full">
         {/* Left Section - Text Content */}
-        <div className="w-full h-full md:w-1/2 flex flex-col items-center justify-center p-6 text-center">
-          <div className="max-w-lg space-y-6">
+        <div className="w-full h-full md:w-1/2 flex flex-col items-center p-6 text-center">
+          <div className="max-w-lg space-y-3">
             <BoxReveal boxColor={"#C62828"} duration={0.5}>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-3 text-gray-700 text-[1.1rem] text-left leading-relaxed"
+                className="mt-2 text-gray-700 text-[1.1rem] text-left leading-relaxed"
               >
                 <p>
                   🚀 Full Stack Engineer with{" "}
@@ -94,7 +94,6 @@ const Hero = () => {
                   </span>
                   .
                 </p>
-                <p>🎯 Focused on building scalable and interactive solutions.</p>
               </motion.div>
             </BoxReveal>
 
@@ -113,7 +112,7 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="h-full flex items-center justify-center w-full md:w-1/2 p-6"
+        <div className="h-full flex justify-center w-full md:w-1/2 p-6"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5, }}
