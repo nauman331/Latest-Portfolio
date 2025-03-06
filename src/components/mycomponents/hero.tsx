@@ -35,7 +35,7 @@ const Hero = () => {
         <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-[#C62828] cursor-pointer'>
           <Linkedin />
         </a>
-        <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-[#C62828] cursor-pointer'>
+        <a href='https://www.tiktok.com/@naumansoftwareengineer?_t=ZS-8uRvIidEiee&_r=1' className='hover:text-[#C62828] cursor-pointer'>
           <FaTiktok />
         </a>
       </motion.div>
