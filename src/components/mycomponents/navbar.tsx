@@ -137,7 +137,7 @@ const Navbar = () => {
         </button>
       ) : (
         <a
-          href="https://api.whatsapp.com/send?phone=923027731129&text=Hello!%20I%20need%20assistance."
+          href="https://api.whatsapp.com/send?phone=923027731120&text=Hello!%20Are%20You%20Available."
           target="_blank"
           rel="noopener noreferrer"
           className="fixed z-[999] bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg 
