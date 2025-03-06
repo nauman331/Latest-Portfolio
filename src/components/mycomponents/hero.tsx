@@ -74,7 +74,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-2 text-gray-700 text-[1.1rem] text-left leading-relaxed"
+                className="mt-2 text-gray-700 text-[1.1rem] text-left leading-9"
               >
                 <p>
                   🚀 Full Stack Engineer with{" "}
