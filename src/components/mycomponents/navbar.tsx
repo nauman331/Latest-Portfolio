@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowUp } from "lucide-react";
+import { Menu, X, ArrowUp, Sun, Moon } from "lucide-react";
 import { ScrollProgress } from "../magicui/scroll-progress";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { Facebook, Github, Linkedin } from "lucide-react";
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const location = useLocation(); // Get current route
 
   const links = [
@@ -42,6 +43,19 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -53,13 +67,13 @@ const Navbar = () => {
         <nav
           className={`w-full transition-all duration-300 z-50 
             ${isScrolled
-              ? "fixed top-0 left-0 right-0 w-screen bg-white/90 backdrop-blur-md shadow-md py-4 border-b border-gray-200"
-              : "mt-8 mb-0 transform bg-white/80 backdrop-blur-md shadow-md rounded-full md:px-8 px-3 md:py-5 py-3 w-full border border-gray-200"
+              ? "fixed top-0 left-0 right-0 w-screen bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-md py-4 border-b border-gray-200 dark:border-gray-700"
+              : "mt-8 mb-0 transform bg-white/80 dark:bg-gray-900 backdrop-blur-md shadow-md rounded-full md:px-8 px-3 md:py-5 py-3 w-full border border-gray-200 dark:border-gray-700"
             }`}
         >
           <div className="flex items-center justify-between mx-auto max-w-6xl px-6">
             <div className="text-xl font-bold">
-              <span className="text-black">M.</span>
+              <span className="text-black dark:text-white">M.</span>
               <span className="text-[#C62828]">Nauman</span>
             </div>
             <div className="hidden md:flex space-x-6 font-medium">
@@ -67,21 +81,26 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`hover:text-red-500 transition-colors ${location.pathname === item.href
-                      ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disabled style for active link
-                      : ""
+                  className={`hover:text-red-500 transition-colors dark:text-white ${location.pathname === item.href
+                    ? "text-gray-500 dark:text-gray-400 pointer-events-none cursor-not-allowed"
+                    : ""
                     }`}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-            <button
-              className="md:hidden text-gray-700"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+            <div className="flex items-center gap-4">
+              <button onClick={toggleTheme} className="text-gray-700 dark:text-white">
+                {theme === "light" ? <Moon size={24} /> : <Sun size={24} />}
+              </button>
+              <button
+                className="md:hidden text-gray-700 dark:text-white"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
           </div>
         </nav>
       </div>
@@ -92,23 +111,22 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative z-50 bg-white w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50
+            className="relative z-50 bg-white dark:bg-gray-900 w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50 dark:border-white/50
               transform transition-transform duration-700 ease-out animate-slide-down"
           >
             {links.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`hover:text-red-500 transition-colors ${location.pathname === item.href
-                    ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disable active link
-                    : ""
+                className={`hover:text-red-500 transition-colors dark:text-white ${location.pathname === item.href
+                  ? "text-gray-500 dark:text-gray-400 pointer-events-none cursor-not-allowed"
+                  : ""
                   }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-
             <div className="flex w-full items-center justify-center gap-5 flex-wrap mt-10">
               <a href="https://github.com/nauman331" className="bg-[#C62828] text-white p-2 rounded-full cursor-pointer">
                 <Github />
@@ -146,26 +164,6 @@ const Navbar = () => {
           <FaWhatsapp size={24} />
         </a>
       )}
-
-      <style>
-        {`
-          @keyframes slideDown {
-            0% { opacity: 0; transform: translateY(-50px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .animate-slide-down {
-            animation: slideDown 0.6s ease-out;
-          }
-
-          @keyframes fadeIn {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-          }
-          .animate-fade-in {
-            animation: fadeIn 0.4s ease-in-out;
-          }
-        `}
-      </style>
     </>
   );
 };
