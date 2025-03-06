@@ -67,11 +67,10 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`hover:text-red-500 transition-colors ${
-                    location.pathname === item.href
+                  className={`hover:text-red-500 transition-colors ${location.pathname === item.href
                       ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disabled style for active link
                       : ""
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -100,11 +99,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`hover:text-red-500 transition-colors ${
-                  location.pathname === item.href
+                className={`hover:text-red-500 transition-colors ${location.pathname === item.href
                     ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disable active link
                     : ""
-                }`}
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -139,7 +137,7 @@ const Navbar = () => {
         </button>
       ) : (
         <a
-          href="https://wa.me/YOUR_NUMBER"
+          href="https://api.whatsapp.com/send?phone=923027731129&text=Hello!%20I%20need%20assistance."
           target="_blank"
           rel="noopener noreferrer"
           className="fixed z-[999] bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg 
