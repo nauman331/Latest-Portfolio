@@ -55,7 +55,7 @@ const Testinomials = () => {
         My <span className="text-[#C62828]">Clients</span>
       </motion.h2>
 
-      <div className="flex w-full items-center justify-around flex-wrap mb-20 px-5">
+      <div className="flex w-full items-center justify-around flex-wrap gap-10 mb-20 px-5">
         {[
           { label: "Happy Clients", value: 15 },
           { label: "Projects Completed", value: 20 },
