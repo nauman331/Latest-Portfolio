@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { reviews } from "@/utils/exports";
 import { motion } from "motion/react";
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -44,27 +45,51 @@ const ReviewCard = ({
 const Testinomials = () => {
   return (
     <section className="container my-28">
-       <motion.h2 
-       initial={{ opacity: 0, y: -50 }}
-       whileInView={{ opacity: 1, y: 0 }}
-       transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
-       className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight">
+      <motion.h2
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        aria-label="Testimonials from my Clients"
+      >
         My <span className="text-[#C62828]">Clients</span>
       </motion.h2>
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+
+      <div className="flex w-full items-center justify-around flex-wrap mb-20 px-5">
+        {[
+          { label: "Happy Clients", value: 15 },
+          { label: "Projects Completed", value: 20 },
+          { label: "Positive Reviews", value: 10 },
+        ].map((item, index) => (
+          <div key={index} className="flex items-center justify-center gap-3 flex-col">
+            <div className="flex items-center">
+              <NumberTicker
+                value={item.value}
+                className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+                aria-label={item.label}
+              />
+              <span className="text-5xl font-bold text-black dark:text-white">+</span>
+            </div>
+            <p className="text-lg font-semibold dark:text-gray-300">{item.label}</p>
+          </div>
         ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
-    </div>
+      </div>
+
+
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+        <Marquee pauseOnHover className="[--duration:15s]">
+          {firstRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {secondRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      </div>
     </section>
   );
 }

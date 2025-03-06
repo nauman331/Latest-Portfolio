@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowUp } from "lucide-react";
 import { ScrollProgress } from "../magicui/scroll-progress";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
@@ -9,13 +9,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const location = useLocation(); // Get current route
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Skills", href: "skills" },
-    { name: "Projects", href: "projects" },
-    { name: "Testimonials", href: "testimonials" },
-    { name: "Contact", href: "contact" },
+    { name: "Skills", href: "/skills" },
+    { name: "Projects", href: "/projects" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
   ];
 
   useEffect(() => {
@@ -66,7 +67,11 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="hover:text-red-500 transition-colors"
+                  className={`hover:text-red-500 transition-colors ${
+                    location.pathname === item.href
+                      ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disabled style for active link
+                      : ""
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -81,42 +86,47 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+
       {isOpen && (
-        <>
+        <div
+          className="fixed h-screen p-6 flex items-center justify-center inset-0 bg-black/50 backdrop-blur-md z-40 transition-opacity"
+          onClick={() => setIsOpen(false)}
+        >
           <div
-            className="fixed h-screen p-6 flex items-center justify-center inset-0 bg-black/50 backdrop-blur-md z-40 transition-opacity"
-            onClick={() => setIsOpen(false)}
+            className="relative z-50 bg-white w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50
+              transform transition-transform duration-700 ease-out animate-slide-down"
           >
-            <div
-              className="relative z-50 bg-white w-full shadow-lg rounded-lg py-6 flex flex-col space-y-4 items-center border border-black/50 transform transition-transform duration-700 ease-out animate-bounce-slide-in"
-            >
-              {links.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="hover:text-red-500 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="flex w-full items-center justify-center gap-5 flex-wrap mt-10">
-                <a href='https://github.com/nauman331' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
-                  <Github />
-                </a>
-                <a href='https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
-                  <Facebook />
-                </a>
-                <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='bg-[#C62828] text-white p-2 rounded-full cursor-pointer'>
-                  <Linkedin />
-                </a>
-                <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='bg-[#C62828] text-white p-3 rounded-full cursor-pointer'>
-                  <FaTiktok />
-                </a>
-              </div>
+            {links.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`hover:text-red-500 transition-colors ${
+                  location.pathname === item.href
+                    ? "text-gray-500 pointer-events-none cursor-not-allowed" // Disable active link
+                    : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            <div className="flex w-full items-center justify-center gap-5 flex-wrap mt-10">
+              <a href="https://github.com/nauman331" className="bg-[#C62828] text-white p-2 rounded-full cursor-pointer">
+                <Github />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L" className="bg-[#C62828] text-white p-2 rounded-full cursor-pointer">
+                <Facebook />
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app" className="bg-[#C62828] text-white p-2 rounded-full cursor-pointer">
+                <Linkedin />
+              </a>
+              <a href="https://www.tiktok.com/@naumansoftwareengineer?_t=ZS-8uRvIidEiee&_r=1" className="bg-[#C62828] text-white p-3 rounded-full cursor-pointer">
+                <FaTiktok />
+              </a>
             </div>
           </div>
-        </>
+        </div>
       )}
 
       {showScrollTop ? (
@@ -141,6 +151,14 @@ const Navbar = () => {
 
       <style>
         {`
+          @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-slide-down {
+            animation: slideDown 0.6s ease-out;
+          }
+
           @keyframes fadeIn {
             0% { opacity: 0; transform: scale(0.9); }
             100% { opacity: 1; transform: scale(1); }

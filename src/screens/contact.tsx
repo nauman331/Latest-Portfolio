@@ -13,13 +13,15 @@ const Contact = () => {
     >
       {/* Animated Heading */}
       <motion.h2
-        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        aria-label="Testimonials from my Clients"
       >
-        Contact <span className="text-[#C62828]">Me</span>
+        My <span className="text-[#C62828]">Contacts</span>
       </motion.h2>
+
 
       {/* Contact Section Layout */}
       <motion.div

@@ -22,15 +22,17 @@ const Projects = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: false }}
     >
-      <motion.h2
-        className="text-4xl font-bold text-center mb-14 text-gray-900 tracking-tight"
+     <motion.h2
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.2, ease: "easeInOut" }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        aria-label="Testimonials from my Clients"
       >
         Featured <span className="text-[#C62828]">Projects</span>
         <h6 className="text-sm text-gray-500 p-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
       </motion.h2>
+
 
       <motion.div 
       initial={{opacity: 0, y: 50}}

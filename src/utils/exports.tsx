@@ -174,7 +174,7 @@ export const reviews = [
   {
     name: "Al Bashayera",
     username: "@albashayera",
-    body: "Nauman, I just have to say, this platform is amazing! Everything runs so smoothly, and the whole bidding process feels effortless. It’s super easy to use, and the design looks really professional. I can tell a lot of effort went into this. Honestly, great job—this feels like a high-quality auction site!",
+    body: "Nauman, I just have to say, you have done great job! Every functionality I told works perfectally, and the whole bidding process feels effortless. It’s super easy to use, and the design looks really professional. I can tell a lot of effort went into this. Honestly, great job—this feels like a high-quality auction site!",
     img: client6
   },
 ];
