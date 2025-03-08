@@ -11,19 +11,19 @@ const ContactInfo = () => {
         >
             <div className="flex items-center gap-4 text-gray-700">
                 <MapPin size={24} color="#C62828" />
-                <p>123 Street, City, Country</p>
+                <p>Lahore, Punjab Pakistan</p>
             </div>
             <div className="flex items-center gap-4 text-gray-700">
                 <Phone size={24} color="#C62828" />
-                <p>+123 456 7890</p>
+                <p>+92 331 83 888 05</p>
             </div>
             <div className="flex items-center gap-4 text-gray-700">
                 <Mail size={24} color="#C62828" />
-                <p>email@example.com</p>
+                <p>nauman33183@gmail.com</p>
             </div>
             <div className="flex items-center gap-4 text-gray-700">
                 <Linkedin size={24} color="#C62828" />
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-[#C62828]">
+                <a href="https://linkedin.com/in/nauman331" target="_blank" rel="noopener noreferrer" className="hover:text-[#C62828]">
                     LinkedIn Profile
                 </a>
             </div>
