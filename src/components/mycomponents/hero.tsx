@@ -112,7 +112,7 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="h-full flex justify-center w-full md:w-1/2 p-6"
+        <div className="h-full hidden md:flex justify-center w-full md:w-1/2 p-6"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5, }}
