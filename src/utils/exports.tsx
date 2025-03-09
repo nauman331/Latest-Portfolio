@@ -33,7 +33,6 @@ export const skills = [
   "heroku",
   "git",
   "github",
-  "visualstudiocode",
   "androidstudio",
   "figma",
   "mongodb",

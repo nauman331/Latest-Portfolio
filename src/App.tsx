@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom"
 import { lazy, Suspense, useEffect, useState } from "react";
 import Cursor from "./components/mycomponents/cursor";
 import Loader from "./components/mycomponents/loader";
+import { useSelector } from "react-redux";
+import { RootState } from "./store/store";
 const Home = lazy(() => import("./screens/home"));
 const Nav = lazy(() => import("./components/mycomponents/navbar"));
 const Footer = lazy(() => import("./components/mycomponents/footer"));
@@ -12,16 +14,19 @@ const Contact = lazy(() => import("./screens/contact"));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-
+  const theme = useSelector((state: RootState) => state.theme.theme);
   useEffect(() => {
     const checkScreenSize = () => setIsMobile(window.innerWidth <= 768);
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
+
   }, []);
 
   return (
-    <div style={{ cursor: isMobile ? "auto" : "none" }}>
+    <div
+      className={`${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"} transition-colors duration-300 ease-in-out`}
+      style={{ cursor: isMobile ? "auto" : "none" }}>
       {!isMobile && <Cursor />}
       <Suspense fallback={<Loader />}>
         <Nav />

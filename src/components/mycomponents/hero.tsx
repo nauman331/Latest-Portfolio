@@ -8,9 +8,11 @@ import { motion } from "framer-motion";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 const Hero = () => {
+  const theme = useSelector((state: RootState) => state.theme.theme);
   return (
     <>
       {/* Full-screen DotPattern Background */}
@@ -21,21 +23,21 @@ const Hero = () => {
         )}
       />
 
-      <motion.div drag dragConstraints={{ top: -125, left: -12, right: 400, bottom: 300 }} whileDrag={{ scale: 1.2 }} dragElastic={.1} whileHover={{ cursor: 'grabbing' }} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} className='bg-white w-14 md:top-48 top-32 border border-gray-200 h-48 absolute hidden md:flex flex-col justify-evenly items-center shadow-lg'
+      <motion.div drag dragConstraints={{ top: -125, left: -12, right: 400, bottom: 300 }} whileDrag={{ scale: 1.2 }} dragElastic={.1} whileHover={{ cursor: 'grabbing' }} dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }} className=" w-14 md:top-48 top-32 border border-gray-200 h-48 absolute hidden md:flex flex-col justify-evenly items-center shadow-lg"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <a href='https://github.com/nauman331' className='hover:text-[#C62828] cursor-pointer'>
+        <a href='https://github.com/nauman331' className={`${theme === "dark" ? "hover:text-[#9C27B0]" : "hover:text-[#C62828] "} cursor-pointer`}>
           <Github />
         </a>
-        <a href='https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L' className='hover:text-[#C62828] cursor-pointer'>
+        <a href='https://www.facebook.com/profile.php?id=100091209582055&mibextid=dZk1I5icssMIZk4L' className={`${theme === "dark" ? "hover:text-[#9C27B0]" : "hover:text-[#C62828]"} cursor-pointer`}>
           <Facebook />
         </a>
-        <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-[#C62828] cursor-pointer'>
+        <a href='https://www.linkedin.com/in/muhammad-nauman-72a2b2298?utm_source=share&utm_compaign=share_via&utm_content=profile&utm_medium=android_app' className={`${theme === "dark" ? "hover:text-[#9C27B0]" : "hover:text-[#C62828]"} cursor-pointer`}>
           <Linkedin />
         </a>
-        <a href='https://www.tiktok.com/@naumansoftwareengineer?_t=ZS-8uRvIidEiee&_r=1' className='hover:text-[#C62828] cursor-pointer'>
+        <a href='https://www.tiktok.com/@naumansoftwareengineer?_t=ZS-8uRvIidEiee&_r=1' className={`${theme === "dark" ? "hover:text-[#9C27B0]" : "hover:text-[#C62828]"} cursor-pointer`}>
           <FaTiktok />
         </a>
       </motion.div>
@@ -43,18 +45,18 @@ const Hero = () => {
         {/* Left Section - Text Content */}
         <div className="w-full h-full md:w-1/2 flex flex-col items-center p-6 text-center">
           <div className="max-w-lg space-y-3">
-            <BoxReveal boxColor={"#C62828"} duration={0.5}>
+            <BoxReveal boxColor={theme === "dark" ? "#9C27B0" : "#C62828"} duration={0.5}>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="md:text-[3.8rem] text-[2.8rem] font-extrabold leading-tight tracking-wide"
               >
-                M<span className="text-[#C62828]">.</span> Nauman
+                M<span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>.</span> Nauman
               </motion.p>
             </BoxReveal>
 
-            <BoxReveal boxColor={"#C62828"} duration={0.5}>
+            <BoxReveal boxColor={theme === "dark" ? "#9C27B0" : "#C62828"} duration={0.5}>
               <motion.h2
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -63,47 +65,55 @@ const Hero = () => {
               >
                 I'm{" "}
                 <WordRotate
-                  className="font-bold text-[#C62828] text-[1.5rem]"
+                  className={`font-bold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"} text-[1.5rem]`}
                   words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer"]}
                 />
               </motion.h2>
             </BoxReveal>
 
-            <BoxReveal boxColor={"#C62828"} duration={0.5}>
+            <BoxReveal boxColor={theme === "dark" ? "#9C27B0" : "#C62828"} duration={0.5}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-2 text-gray-700 text-[1.1rem] text-left leading-9"
+                className="mt-2 text-[1.1rem] text-gray-500 text-left leading-9"
               >
                 <p>
                   🚀 Full Stack Engineer with{" "}
-                  <span className="font-semibold text-[#C62828]">
+                  <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     1 year of learning and 2 years of freelancing
                   </span>{" "}
                   experience.
                 </p>
                 <p>
+                  🎓 Enrolled in{" "}
+                  <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
+                    BS Computer Science (2022-2026)
+                  </span>{" "}
+                  at Punjab University, Lahore.
+                </p>
+                <p>
                   💻 Experienced in{" "}
-                  <span className="font-semibold text-[#C62828]">
+                  <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     MERN, TypeScript, React Native, Redux Toolkit, Socket.io, Tailwind CSS
                   </span>
                   , and{" "}
-                  <span className="font-semibold text-[#C62828]">
+                  <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     Framer Motion
                   </span>
                   .
                 </p>
+
               </motion.div>
             </BoxReveal>
 
-            <BoxReveal boxColor={"#C62828"} duration={0.5}>
+            <BoxReveal boxColor={theme === "dark" ? "#9C27B0" : "#C62828"} duration={0.5}>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Button className="mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E] transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Button className={`mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r ${theme === "dark" ? "hover:from-[#C62828] hover:to-[#9C27B0] from-[#9C27B0] to-[#1A237E]" : "from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E]"} transition-all duration-300 shadow-lg hover:shadow-xl`}>
                   Check Out My Resume
                 </Button>
               </motion.div>
@@ -122,10 +132,10 @@ const Hero = () => {
               ease: "easeOut",
               y: { repeat: Infinity, duration: 2, ease: "easeInOut" }, // Smooth floating
             }}
-            className=" w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full shadow-xl overflow-hidden border-[8px] border-[#C62828] hover:border-[#9C27B0] transition-all duration-300"
+            className={`w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full shadow-xl overflow-hidden border-[8px] ${theme === "dark" ? "hover:border-[#C62828] border-[#9C27B0]" : "border-[#C62828] hover:border-[#9C27B0]"} transition-all duration-300`}
           >
             {/* Image Overlay Effect */}
-            <div className=" inset-0 bg-gradient-to-t from-[#C62828] via-transparent to-transparent opacity-30" />
+            <div className={`inset-0 bg-gradient-to-t ${theme === "dark" ? "from-[#9C27B0]" : "from-[#C62828]"} via-transparent to-transparent opacity-30`} />
             <img
               src={nauman}
               alt="M. Nauman"
