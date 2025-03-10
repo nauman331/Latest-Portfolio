@@ -47,19 +47,19 @@ export const skills = [
 export const aboutskills: Record<string, { icon: JSX.Element; color: string }> = {
   "React JS": { icon: <FaReact className="text-blue-500 text-2xl" />, color: "#3b82f6" },
   "Node JS": { icon: <FaNodeJs className="text-green-500 text-2xl" />, color: "#22c55e" },
-  "Express JS": { icon: <TbHexagonLetterE className="text-zinc-400 text-2xl" />, color: "#18181b" },
+  "Express JS": { icon: <TbHexagonLetterE className="text-zinc-400 text-2xl" />, color: "#64748b" },
   "React Native": { icon: <SiAndroidstudio className="text-green-600 text-2xl" />, color: "#16a34a" },
   "Tailwind Css": { icon: <SiTailwindcss className="text-cyan-500 text-2xl" />, color: "#06b6d4" },
-  "Shadcn UI": { icon: <SiShadcnui className="text-gray-900 text-2xl" />, color: "#18181b" },
+  "Shadcn UI": { icon: <SiShadcnui className="text-gray-600 text-2xl" />, color: "#64748b" },
   "Typescript": { icon: <SiTypescript className="text-blue-600 text-2xl" />, color: "#2563eb" },
   "Framer Motion": { icon: <SiFramer className="text-pink-500 text-2xl" />, color: "#ec4899" },
   "Figma": { icon: <SiFigma className="text-pink-500 text-2xl" />, color: "#f472b6" },
-  "Leverage AI": { icon: <SiGoogleassistant className="text-gray-500 text-2xl" />, color: "#64748b" },
+  "Leverage AI": { icon: <SiGoogleassistant className="text-gray-600 text-2xl" />, color: "#64748b" },
   "Scss": { icon: <BsFiletypeScss className="text-pink-400 text-2xl" />, color: "#f472b6" },
   "Magic UI": { icon: <TbCircleLetterMFilled className="text-purple-500 text-2xl" />, color: "#a855f7" },
   "Mongo DB": { icon: <FaDatabase className="text-green-700 text-2xl" />, color: "#15803d" },
   "MySQL": { icon: <SiMysql className="text-orange-800 text-2xl" />, color: "#c2410c" },
-  "Socket. IO": { icon: <SiSocketdotio className="text-gray-900 text-2xl" />, color: "#1e293b" },
+  "Socket. IO": { icon: <SiSocketdotio className="text-gray-600 text-2xl" />, color: "#64748b" },
   "Redux Toolkit": { icon: <SiRedux className="text-purple-500 text-2xl" />, color: "#9333ea" },
 };
 

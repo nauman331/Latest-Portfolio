@@ -2,8 +2,12 @@
 import { motion } from "framer-motion";
 import ContactForm from "@/components/mycomponents/contactform";
 import ContactInfo from "@/components/mycomponents/contactinfo";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const Contact = () => {
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
   return (
     <motion.section
       className="container w-full"
@@ -17,9 +21,9 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
-        aria-label="Testimonials from my Clients"
+        aria-label="My Contact Info"
       >
-        My <span className="text-[#C62828]">Contacts</span>
+        My <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Contacts</span>
       </motion.h2>
 
 

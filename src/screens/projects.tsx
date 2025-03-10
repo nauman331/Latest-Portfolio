@@ -5,8 +5,12 @@ import { motion } from "framer-motion";
 import { projects } from "@/utils/exports";
 import { Lens } from "@/components/magicui/lens";
 import { ArrowUpRight } from "lucide-react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const Projects = () => {
+  const theme = useSelector((state: RootState) => state.theme.theme);
+
   const [visibleProjects, setVisibleProjects] = useState(3);
   const totalProjects = projects.length;
 
@@ -27,9 +31,9 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
-        aria-label="Testimonials from my Clients"
+        aria-label="Some of my Projects"
       >
-        Featured <span className="text-[#C62828]">Projects</span>
+        Featured <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Projects</span>
         <h6 className="text-sm text-gray-500 p-5">Built from scratch—research, problem-solving, and AI assistance. No tutorials</h6>
       </motion.h2>
 

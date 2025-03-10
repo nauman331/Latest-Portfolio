@@ -3,6 +3,8 @@ import { Marquee } from "@/components/magicui/marquee";
 import { reviews } from "@/utils/exports";
 import { motion } from "motion/react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -43,6 +45,7 @@ const ReviewCard = ({
 };
 
 const Testinomials = () => {
+  const theme = useSelector((state: RootState) => state.theme.theme);
   return (
     <section className="container my-28">
       <motion.h2
@@ -52,7 +55,7 @@ const Testinomials = () => {
         className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
         aria-label="Testimonials from my Clients"
       >
-        My <span className="text-[#C62828]">Clients</span>
+        My <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Clients</span>
       </motion.h2>
 
       <div className="flex w-full items-center justify-around flex-wrap gap-10 mb-20 px-5">
