@@ -1,8 +1,11 @@
 "use client";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 export default function Cursor() {
+  const theme = useSelector((state: RootState) => state.theme.theme);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const dotOffsetX = useMotionValue(0);
@@ -29,7 +32,7 @@ export default function Cursor() {
         cursorY.set(e.clientY);
 
         // Limit dot movement inside the ring
-        const offsetLimit = 14; 
+        const offsetLimit = 14;
         let offsetX = Math.min(Math.max(e.movementX * 1.5, -offsetLimit), offsetLimit);
         let offsetY = Math.min(Math.max(e.movementY * 1.5, -offsetLimit), offsetLimit);
 
@@ -68,25 +71,25 @@ export default function Cursor() {
       >
         {/* Outer Ring (Expands on Hover) */}
         <motion.div
-          className="absolute w-14 h-14 border-2 border-[#C62828] rounded-full"
+          className={`absolute w-14 h-14 border-2 ${theme === "dark" ? "border-[#9C27B0]" : "border-[#C62828]"} rounded-full`}
           animate={{
             opacity: isHovering ? 0.9 : 0.5,
             scale: isHovering ? 1.5 : 1,
-            borderColor: isHovering ? "#9C27B0" : "#C62828", 
+            borderColor: theme === "dark" ? isHovering ? "#C62828" : "#9C27B0" : isHovering ? "#9C27B0" : "#C62828",
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         />
 
         {/* Moving Dot (Now also grows on hover!) */}
         <motion.div
-          className="w-5 h-5 bg-[#ff3d00] rounded-full"
+          className={`w-5 h-5 ${theme === "dark" ? "bg-[#9C27B0]" : "bg-[#C62828]"} rounded-full`}
           style={{
             translateX: dotOffsetXSpring,
             translateY: dotOffsetYSpring,
           }}
           animate={{
-            scale: isHovering ? 1.4 : 1, // Grows slightly on hover
-            backgroundColor: isHovering ? "#9C27B0" : "#C62828",
+            scale: isHovering ? 1.4 : 1,
+            backgroundColor: theme === "dark" ? isHovering ? "#C62828" : "#9C27B0" : isHovering ? "#9C27B0" : "#C62828",
           }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         />
