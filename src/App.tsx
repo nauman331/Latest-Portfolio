@@ -11,6 +11,7 @@ const Skills = lazy(() => import("./screens/skills"));
 const Projects = lazy(() => import("./screens/projects"));
 const Testinomials = lazy(() => import("./screens/testinomials"));
 const Contact = lazy(() => import("./screens/contact"));
+const NotFound = lazy(() => import("./screens/notfound"));
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -36,6 +37,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/testimonials" element={<Testinomials />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Suspense>

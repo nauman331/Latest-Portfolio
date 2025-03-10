@@ -29,7 +29,7 @@ const Contact = () => {
 
       {/* Contact Section Layout */}
       <motion.div
-        className="px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-14 w-full"
+        className="px-6 md:px-16 flex flex-col md:flex-row items-center justify-between mt-10 gap-14 w-full"
         initial="hidden"
         whileInView="visible"
         variants={{
