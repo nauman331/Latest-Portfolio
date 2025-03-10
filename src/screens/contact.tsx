@@ -20,7 +20,7 @@ const Contact = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        className="text-4xl mt-28 font-bold text-center mb-1 tracking-tight"
         aria-label="My Contact Info"
       >
         My <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Contacts</span>

@@ -20,23 +20,21 @@ const ReviewCard = ({
   username: string;
   body: string;
 }) => {
+  const theme = useSelector((state: RootState) => state.theme.theme);
   return (
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        `${theme === "dark" ? "border-gray-50/[.1] bg-gray-50/[.01] hover:bg-gray-50/[.05]" : "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"}`,
       )}
     >
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-sm font-medium">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-xs font-medium">{username}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm">{body}</blockquote>
@@ -52,7 +50,7 @@ const Testinomials = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        className="text-4xl mt-28 font-bold text-center mb-14 tracking-tight"
         aria-label="Testimonials from my Clients"
       >
         My <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Clients</span>
@@ -68,12 +66,12 @@ const Testinomials = () => {
             <div className="flex items-center">
               <NumberTicker
                 value={item.value}
-                className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+                className={`${theme === "dark" ? "text-white" : "text-black"} whitespace-pre-wrap text-8xl font-medium tracking-tighter`}
                 aria-label={item.label}
               />
-              <span className="text-5xl font-bold text-black dark:text-white">+</span>
+              <span className="text-5xl font-bold">+</span>
             </div>
-            <p className="text-lg font-semibold dark:text-gray-300">{item.label}</p>
+            <p className="text-lg font-semibold">{item.label}</p>
           </div>
         ))}
       </div>
