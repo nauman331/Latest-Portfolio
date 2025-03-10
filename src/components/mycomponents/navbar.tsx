@@ -6,7 +6,8 @@ import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { Facebook, Github, Linkedin } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { toggleTheme } from "../../store/themeSlice";
+import { toggleTheme, setTheme } from "../../store/themeSlice";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,17 @@ const Navbar = () => {
     { name: "Testimonials", href: "/testimonials" },
     { name: "Contact", href: "/contact" },
   ];
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (!storedTheme) {
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const defaultTheme = systemPrefersDark ? "dark" : "light";
+      dispatch(setTheme(defaultTheme));
+      localStorage.setItem("theme", defaultTheme);
+      toast.success("System's Default Theme Applied! You can change it anytime from Navbar.", { duration: 5000 });
+    }
+  }, [dispatch]);
 
   useEffect(() => {
     const handleScroll = () => {
