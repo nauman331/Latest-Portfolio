@@ -53,12 +53,12 @@ const ContactForm = () => {
 
     return (
         <motion.div
-            className="w-full max-w-lg bg-white shadow-xl rounded-2xl p-8 border border-gray-200"
+            className="w-full max-w-lg shadow-xl rounded-2xl p-8 border border-gray-200"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
-            <h2 className="text-4xl font-extrabold mb-8 text-center md:text-left text-gray-800">
+            <h2 className="text-4xl font-extrabold mb-8 text-center md:text-left">
                 Get in Touch
             </h2>
             <form onSubmit={sendEmail} className="flex flex-col gap-6">
@@ -70,8 +70,8 @@ const ContactForm = () => {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="pl-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C62828] focus:outline-none"
-                        required
+                        className="pl-12 py-3 border border-gray-300 rounded-lg focus:ring-2 bg-transparent focus:outline-none"
+                       
                     />
                 </div>
                 <div className="relative">
@@ -82,8 +82,8 @@ const ContactForm = () => {
                         placeholder="Your Email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="pl-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C62828] focus:outline-none"
-                        required
+                        className="pl-12 py-3 border border-gray-300 rounded-lg focus:ring-2 bg-transparent focus:outline-none"
+                       
                     />
                 </div>
                 <div className="relative">
@@ -93,13 +93,13 @@ const ContactForm = () => {
                         placeholder="Your Message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="pl-12 pt-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C62828] focus:outline-none"
-                        required
+                        className="pl-12 pt-3 border border-gray-300 rounded-lg focus:ring-2 bg-transparent focus:outline-none"
+                       
                     />
                 </div>
                 <InteractiveHoverButton
                     type="submit"
-                    className="py-3 text-lg font-semibold self-end transition-all duration-300 disabled:opacity-50"
+                    className="py-3 text-lg font-semibold bg-transparent w-full text-center self-end transition-all duration-300 disabled:opacity-50"
                     disabled={loading}
                 >
                     {loading ? "Sending..." : "Send Message"}
