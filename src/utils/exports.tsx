@@ -52,7 +52,7 @@ export const aboutskills: Record<string, { icon: JSX.Element; color: string }> =
   "Tailwind Css": { icon: <SiTailwindcss className="text-cyan-500 text-2xl" />, color: "#06b6d4" },
   "Shadcn UI": { icon: <SiShadcnui className="text-gray-600 text-2xl" />, color: "#64748b" },
   "Typescript": { icon: <SiTypescript className="text-blue-600 text-2xl" />, color: "#2563eb" },
-  "Framer Motion": { icon: <SiFramer className="text-pink-500 text-2xl" />, color: "#ec4899" },
+  "Framer": { icon: <SiFramer className="text-pink-500 text-2xl" />, color: "#ec4899" },
   "Figma": { icon: <SiFigma className="text-pink-500 text-2xl" />, color: "#f472b6" },
   "Leverage AI": { icon: <SiGoogleassistant className="text-gray-600 text-2xl" />, color: "#64748b" },
   "Scss": { icon: <BsFiletypeScss className="text-pink-400 text-2xl" />, color: "#f472b6" },
@@ -60,7 +60,7 @@ export const aboutskills: Record<string, { icon: JSX.Element; color: string }> =
   "Mongo DB": { icon: <FaDatabase className="text-green-700 text-2xl" />, color: "#15803d" },
   "MySQL": { icon: <SiMysql className="text-orange-800 text-2xl" />, color: "#c2410c" },
   "Socket. IO": { icon: <SiSocketdotio className="text-gray-600 text-2xl" />, color: "#64748b" },
-  "Redux Toolkit": { icon: <SiRedux className="text-purple-500 text-2xl" />, color: "#9333ea" },
+  "RTK": { icon: <SiRedux className="text-purple-500 text-2xl" />, color: "#9333ea" },
 };
 
 export const projects = [

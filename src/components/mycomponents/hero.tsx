@@ -50,7 +50,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="md:text-[3.8rem] text-[2.8rem] font-extrabold leading-tight tracking-wide"
+                className="md:text-[3.8rem] text-[2.5rem] font-extrabold leading-tight tracking-wide"
               >
                 M<span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>.</span> Nauman
               </motion.p>
@@ -61,7 +61,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="md:text-[1.2rem] text-[.8rem] flex items-center gap-2 font-medium"
+                className="md:text-[1.2rem] text-[.6rem] flex items-center gap-2 font-medium"
               >
                 I'm{" "}
                 <WordRotate
@@ -76,7 +76,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="mt-2 text-[1.1rem] text-gray-500 text-left leading-9"
+                className="mt-2 text-gray-500 text-left leading-9"
               >
                 <p>
                   🚀 Full Stack Engineer with{" "}

@@ -20,7 +20,7 @@ const Projects = () => {
 
   return (
     <motion.section
-      className="w-full bg-white py-20 px-4 md:px-8"
+      className="w-full py-20 px-4 md:px-8"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -30,7 +30,7 @@ const Projects = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-        className="text-4xl mt-28 font-bold text-center mb-14 text-gray-900 tracking-tight"
+        className="text-4xl mt-28 font-bold text-center mb-14 tracking-tight"
         aria-label="Some of my Projects"
       >
         Featured <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Projects</span>
@@ -46,7 +46,7 @@ const Projects = () => {
         {projects.slice(0, visibleProjects).map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all flex flex-col"
+            className="border border-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all flex flex-col"
           >
             <div className="relative overflow-hidden">
               <Lens zoomFactor={2.5} lensSize={110} isStatic={false}>
@@ -61,7 +61,7 @@ const Projects = () => {
               </Lens>
             </div>
             <div className="p-5 flex-grow">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold mb-2">
                 {project.title}
               </h3>
               <p className="text-gray-600 text-sm leading-snug min-h-[40px]">
