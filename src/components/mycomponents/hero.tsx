@@ -61,11 +61,11 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="md:text-[1.2rem] text-[.6rem] flex items-center gap-2 font-medium"
+                className="md:text-[1.2rem] text-[.8rem] flex items-center gap-2 font-medium"
               >
                 I'm{" "}
                 <WordRotate
-                  className={`font-bold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"} text-[1.5rem]`}
+                  className={`font-bold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"} md:text-[1.5rem] text-[1.2rem]`}
                   words={["Frontend Developer", "Backend Developer", "Full Stack Developer", "Android Developer", "IOS Developer"]}
                 />
               </motion.h2>
@@ -78,21 +78,21 @@ const Hero = () => {
                 transition={{ duration: 0.6 }}
                 className="mt-2 text-gray-500 text-left leading-9"
               >
-                <p>
+                <p className="md:text-md text-sm">
                   🚀 Full Stack Engineer with{" "}
                   <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     1 year of learning and 2 years of freelancing
                   </span>{" "}
                   experience.
                 </p>
-                <p>
+                <p className="md:text-md text-sm mt-2">
                   🎓 Enrolled in{" "}
                   <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     BS Computer Science (2022-2026)
                   </span>{" "}
                   at Punjab University, Lahore.
                 </p>
-                <p>
+                <p className="md:text-md text-sm mt-2">
                   💻 Experienced in{" "}
                   <span className={`font-semibold ${theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}`}>
                     MERN, TypeScript, React Native, Redux Toolkit, Socket.io, Tailwind CSS
