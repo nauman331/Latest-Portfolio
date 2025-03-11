@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { Facebook, Linkedin, Github } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import { useSelector } from "react-redux";
