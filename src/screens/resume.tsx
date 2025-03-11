@@ -12,10 +12,10 @@ const Resume = () => {
 
     return (
         <motion.div className={`min-h-screen flex flex-col items-center p-6 justify-center
-        ${themecolor === "dark" ? "bg-gray-900" : "bg-gray-100"}`}>
+        ${themecolor === "dark" ? "bg-gray-800" : "bg-gray-100"}`}>
             {/* Header Section */}
             <motion.h3
-                className="text-center text-3xl font-extrabold my-6"
+                className="text-center md:text-3xl text-xl font-extrabold my-6"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
