@@ -16,20 +16,6 @@ const Footer = () => {
           M. <span className={theme === "dark" ? "text-[#9C27B0]" : "text-[#C62828]"}>Nauman</span>
         </div>
 
-        {/* Navigation Links */}
-        <ul className="flex gap-5 flex-wrap space-x-6 mt-4 md:mt-0">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-            <li key={item}>
-              <Link
-                to={`/${item.toLowerCase()}`}
-                className="text-gray-300 transition duration-300"
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
         {/* Social Media Icons */}
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a href="https://github.com/nauman331" target="_blank" className={theme === "dark" ? "hover:text-[#9C27B0]" : "hover:text-[#C62828]"}>
