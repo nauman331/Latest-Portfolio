@@ -10,9 +10,11 @@ import { Facebook, Github, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const theme = useSelector((state: RootState) => state.theme.theme);
+  const navigate = useNavigate();
   return (
     <>
       {/* Full-screen DotPattern Background */}
@@ -113,7 +115,9 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <Button className={`mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r ${theme === "dark" ? "hover:from-[#C62828] hover:to-[#9C27B0] from-[#9C27B0] to-[#1A237E]" : "from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E]"} transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <Button
+                onClick={()=> navigate("/resume")}
+                className={`mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r ${theme === "dark" ? "hover:from-[#C62828] hover:to-[#9C27B0] from-[#9C27B0] to-[#1A237E]" : "from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E]"} transition-all duration-300 shadow-lg hover:shadow-xl`}>
                   Check Out My Resume
                 </Button>
               </motion.div>
