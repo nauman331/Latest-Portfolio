@@ -58,7 +58,7 @@ const ContactForm = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
-            <h2 className="text-4xl font-extrabold mb-8 text-center md:text-left">
+            <h2 className="md:text-4xl text-2xl font-extrabold mb-8 text-center md:text-left">
                 Get in Touch
             </h2>
             <form onSubmit={sendEmail} className="flex flex-col gap-6">
