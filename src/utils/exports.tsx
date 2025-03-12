@@ -70,22 +70,24 @@ export const projects = [
     techStack: ["React", "TypeScript", "Scss", "Node.js", "Express JS", "MongoDB", "RTK", "Socket.io"],
     github: "https://github.com/nauman331/Car_Auction",
     liveDemo: "https://abaautoauctions.com/",
-    image: project1
+    image: project1,
+    images: [project1, project2],
   },
   {
     title: "CEP Exams",
     description: "Enhanced user Expereince on CEP Exams website(NextJs + TailwindCss) by adding features like search bar and pagination etc.",
     techStack: ["RTK", "TailwindCSS", "NextJS"],
     liveDemo: "https://cepexam.com/",
-    image: project2
-
+    image: project2,
+    images: [project1],
   },
   {
     title: "Zero To Hero DSA Repo",
     description: "My daily routine for learning something new and improving logic building",
     techStack: ["Javascript", "DSA", "Logic Building"],
     github: "https://github.com/nauman331/DSA-Javascript",
-    image: project3
+    image: project3,
+    images: [project1],
   },
   {
     title: "ZOI Network",
@@ -93,15 +95,16 @@ export const projects = [
     techStack: ["React", "ZOD", "CSS", "Node.js", "MongoDB", "Express JS"],
     github: "https://github.com/nauman331/zoinetwork",
     liveDemo: "https://zoi-network.vercel.app",
-    image: project4
+    image: project4,
+    images: [project1],
   },
   {
     title: "Flappy Base",
     description: "A frontend pre-sale landing page for crypto coins",
     techStack: ["NextJS", "TailwindCSS"],
     liveDemo: "https://flappybird-gules-sigma.vercel.app/",
-    image: project5
-
+    image: project5,
+    images: [project1],
   },
   {
     title: "Prime BNB",
@@ -109,7 +112,8 @@ export const projects = [
     techStack: ["Solidity JS", "React", "TailwindCSS", "Typescript", "web3.js"],
     github: "https://github.com/nauman331/PrimeBNB",
     liveDemo: "https://prime-bnb.vercel.app",
-    image: project6
+    image: project6,
+    images: [project1],
   },
   {
     title: "1Core",
@@ -117,7 +121,8 @@ export const projects = [
     techStack: ["HTML", "CSS", "Responsive Design"],
     github: "https://github.com/nauman331/onecore.github.io",
     liveDemo: "https://nauman331.github.io/onecore.github.io/",
-    image: project7
+    image: project7,
+    images: [project1],
   },
   {
     title: "My Old Portfolio",
@@ -125,8 +130,8 @@ export const projects = [
     techStack: ["React", "TailwindCSS", "Framer Motion"],
     github: "https://github.com/nauman331/My-Portfolio",
     liveDemo: "https://mnauman-portfolio.vercel.app/",
-    image: project8
-
+    image: project8,
+    images: [project1],
   },
   {
     title: "My First Portfolio",
@@ -134,8 +139,8 @@ export const projects = [
     techStack: ["React", "TailwindCSS", "Framer Motion"],
     github: "https://github.com/nauman331/Nauman-Portfolio",
     liveDemo: "https://naumans-portfolio.vercel.app/",
-    image: project9
-
+    image: project9,
+    images: [project1],
   },
 ];
 
