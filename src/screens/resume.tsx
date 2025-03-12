@@ -15,7 +15,7 @@ const Resume = () => {
     return (
         <motion.div
             className={`min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300 
-            ${themecolor === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"}`}
+            ${themecolor === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-900"}`}
         >
             {/* Download Resume Button */}
             <div className="flex justify-center mt-6">
