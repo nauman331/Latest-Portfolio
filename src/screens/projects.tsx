@@ -108,14 +108,17 @@ const Projects = () => {
                 }`}
             >
               <button
-                onClick={() => openModal(project)}
                 className="flex items-center justify-center gap-3 text-xs text-gray-500 font-medium hover:text-gray-700"
               >
                 View Project
-                <Info size={20} />
               </button>
 
               <div className="flex gap-3">
+                  <motion.button
+                  onClick={() => openModal(project)}
+                   className="group" whileHover={{ scale: 1.15 }}>
+                    <Info size={20} />
+                  </motion.button>
                 {project.github && (
                   <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="group" whileHover={{ scale: 1.15 }}>
                     <FaGithub size={18} />
@@ -133,8 +136,9 @@ const Projects = () => {
       </motion.div>
 
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <div className={`${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
+              } p-6 rounded-lg shadow-lg max-w-lg w-full relative`}>
             <button
               onClick={closeModal}
               className="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-red-500"
@@ -160,7 +164,7 @@ const Projects = () => {
                   />
                 </SwiperSlide>
               ))}
-            </Swiper>;
+            </Swiper>
           </div>
         </div>
       )}
@@ -175,7 +179,7 @@ const Projects = () => {
             Show More
           </button>
         ) : (
-          <a href="https://github.com/nauman331" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">
+          <a href="https://github.com/nauman331" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center justify-center">
             View More Projects on GitHub <ArrowUpRight className="ml-1" />
           </a>
         )}

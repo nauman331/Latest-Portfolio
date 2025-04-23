@@ -132,7 +132,7 @@ const Hero = () => {
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5, }}
-            animate={{ opacity: 1, scale: 1, rotate: 0, y: [100, -100, 100] }} // Floating effect
+            animate={{ opacity: 1, scale: 1, rotate: 0, y: [20, -20, 20] }} // Floating effect
             transition={{
               duration: 0.8,
               ease: "easeOut",
