@@ -1,4 +1,3 @@
-"use client";
 import { useState, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -46,7 +45,7 @@ const Projects = () => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-        className="text-4xl mt-28 font-bold text-center mb-10 tracking-tight"
+        className="text-4xl mt-28 font-bold text-center mb-4 tracking-tight"
         aria-label="Some of my Projects"
       >
         Featured{" "}
@@ -67,33 +66,33 @@ const Projects = () => {
         {projects.slice(0, visibleProjects).map((project, index) => (
           <motion.div
             key={index}
-            className={`border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all flex flex-col ${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
+            className={`border rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col ${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
               }`}
           >
-            <div className="relative overflow-hidden">
-              <Lens zoomFactor={2.5} lensSize={110} isStatic={false}>
+            <div className="relative aspect-square overflow-hidden rounded-t-2xl">
+              <Lens zoomFactor={2.5} lensSize={120} isStatic={false}>
                 <motion.img
-                  initial={{ opacity: 0, scale: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.9, delay: 0.5, ease: "easeInOut" }}
+                  transition={{ duration: 0.6 }}
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-44 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
                 />
               </Lens>
             </div>
-            <div className="p-5 flex-grow">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 text-sm leading-snug min-h-[40px] dark:text-gray-400">
+            <div className="p-4 flex-grow flex flex-col justify-between">
+              <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-400 line-clamp-3">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-3">
-                {project.techStack.map((tech, i) => (
+                {project.techStack.map((tech: string, i: number) => (
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                    className={`px-2.5 py-1 text-xs rounded-md shadow-sm ${theme === "dark" ? "text-gray-100 bg-gray-800" : "bg-gray-100 text-gray-800"
+                    className={`px-2 py-0.5 text-xs rounded-full font-medium ${theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-gray-800"
                       }`}
                   >
                     {tech}
@@ -107,25 +106,36 @@ const Projects = () => {
                 : "bg-gray-100 text-gray-800 border-gray-200"
                 }`}
             >
-              <button
-                className="flex items-center justify-center gap-3 text-xs text-gray-500 font-medium hover:text-gray-700"
-              >
+              <button className="flex items-center justify-center gap-2 text-xs text-gray-500 font-medium hover:text-gray-700">
                 View Project
               </button>
-
               <div className="flex gap-3">
-                  <motion.button
+                <motion.button
                   onClick={() => openModal(project)}
-                   className="group" whileHover={{ scale: 1.15 }}>
-                    <Info size={20} />
-                  </motion.button>
+                  className="group"
+                  whileHover={{ scale: 1.15 }}
+                >
+                  <Info size={20} />
+                </motion.button>
                 {project.github && (
-                  <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="group" whileHover={{ scale: 1.15 }}>
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                    whileHover={{ scale: 1.15 }}
+                  >
                     <FaGithub size={18} />
                   </motion.a>
                 )}
                 {project.liveDemo && (
-                  <motion.a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="group" whileHover={{ scale: 1.15 }}>
+                  <motion.a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                    whileHover={{ scale: 1.15 }}
+                  >
                     <FaExternalLinkAlt size={16} />
                   </motion.a>
                 )}
@@ -137,21 +147,25 @@ const Projects = () => {
 
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <div className={`${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
-              } p-6 rounded-lg shadow-lg max-w-lg w-full relative`}>
+          <div
+            className={`${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-200 bg-white"
+              } p-6 rounded-lg shadow-lg max-w-lg w-full relative`}
+          >
             <button
               onClick={closeModal}
               className="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-red-500"
             >
               <X size={24} />
             </button>
-            <h2 className="text-xl font-semibold mb-4 text-center">{selectedProject.title}</h2>
+            <h2 className="text-xl font-semibold mb-4 text-center">
+              {selectedProject.title}
+            </h2>
             <Swiper
               navigation={true}
               modules={[Navigation, Autoplay]}
               autoplay={{ delay: 1000, disableOnInteraction: false }}
               className="w-full h-64"
-              onSwiper={(swiper) => (swiperRef.current = swiper)} // Store swiper instance in ref
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
               {selectedProject.images?.map((img: string, i: number) => (
                 <SwiperSlide key={i}>
@@ -159,8 +173,8 @@ const Projects = () => {
                     src={img}
                     alt={`Slide ${i}`}
                     className="w-full h-full object-cover rounded-md"
-                    onMouseEnter={() => swiperRef.current?.autoplay.stop()} // Stop autoplay
-                    onMouseLeave={() => swiperRef.current?.autoplay.start()} // Restart autoplay
+                    onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+                    onMouseLeave={() => swiperRef.current?.autoplay.start()}
                   />
                 </SwiperSlide>
               ))}
@@ -173,13 +187,20 @@ const Projects = () => {
         {visibleProjects < totalProjects ? (
           <button
             onClick={handleShowMore}
-            className={`px-6 py-2 font-semibold rounded-lg shadow-md hover:scale-110 transition-all ${theme === "dark" ? "bg-[#9C27B0] text-white hover:bg-purple-700" : "bg-[#C62828] text-white hover:bg-red-700"
+            className={`px-6 py-2 font-semibold rounded-lg shadow-md hover:scale-110 transition-all ${theme === "dark"
+              ? "bg-[#9C27B0] text-white hover:bg-purple-700"
+              : "bg-[#C62828] text-white hover:bg-red-700"
               }`}
           >
             Show More
           </button>
         ) : (
-          <a href="https://github.com/nauman331" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center justify-center">
+          <a
+            href="https://github.com/nauman331"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold hover:underline flex items-center justify-center"
+          >
             View More Projects on GitHub <ArrowUpRight className="ml-1" />
           </a>
         )}
