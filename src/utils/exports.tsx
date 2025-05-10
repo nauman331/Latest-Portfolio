@@ -94,7 +94,7 @@ export const projects = [
     description: "My Early full-stack mobile mining web application with admin panel including refferal system and tasks",
     techStack: ["React", "ZOD", "CSS", "Node.js", "MongoDB", "Express JS"],
     github: "https://github.com/nauman331/zoinetwork",
-    liveDemo: "https://zoi-network.vercel.app",
+    liveDemo: "https://zoinetwork.vercel.app/",
     image: project4,
     images: [project1],
   },
