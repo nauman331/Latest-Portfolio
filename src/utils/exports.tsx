@@ -18,6 +18,7 @@ import client3 from "../assets/clients/client3.webp";
 import client4 from "../assets/clients/client4.webp";
 import client5 from "../assets/clients/client5.webp";
 import client6 from "../assets/clients/client6.png";
+import client7 from "../assets/clients/client7.jpeg";
 import { BsFiletypeScss } from "react-icons/bs";
 
 export const skills = [
@@ -90,12 +91,12 @@ export const projects = [
     images: [project1],
   },
   {
-    title: "ZOI Network",
-    description: "My Early full-stack mobile mining web application with admin panel including refferal system and tasks",
-    techStack: ["React", "ZOD", "CSS", "Node.js", "MongoDB", "Express JS"],
-    github: "https://github.com/nauman331/zoinetwork",
-    liveDemo: "https://zoinetwork.vercel.app/",
-    image: project4,
+    title: "Amazing Industries",
+    description: "A full satck factory management project for posting jobs and tasks according to specific roles and users",
+    techStack: ["React", "TailwindCSS", "Framer Motion"],
+    github: "https://github.com/nauman331/FactoryProject.git",
+    liveDemo: "https://amazingindustries.onrender.com/",
+    image: project9,
     images: [project1],
   },
   {
@@ -116,6 +117,15 @@ export const projects = [
     images: [project1],
   },
   {
+    title: "ZOI Network",
+    description: "My Early full-stack mobile mining web application with admin panel including refferal system and tasks",
+    techStack: ["React", "ZOD", "CSS", "Node.js", "MongoDB", "Express JS"],
+    github: "https://github.com/nauman331/zoinetwork",
+    liveDemo: "https://zoinetwork.vercel.app/",
+    image: project4,
+    images: [project1],
+  },
+  {
     title: "1Core",
     description: "A crypto mining responsive dashboard page for one of my client",
     techStack: ["HTML", "CSS", "Responsive Design"],
@@ -133,15 +143,7 @@ export const projects = [
     image: project8,
     images: [project1],
   },
-  {
-    title: "My First Portfolio",
-    description: "One of my first portfolio website",
-    techStack: ["React", "TailwindCSS", "Framer Motion"],
-    github: "https://github.com/nauman331/Nauman-Portfolio",
-    liveDemo: "https://naumans-portfolio.vercel.app/",
-    image: project9,
-    images: [project1],
-  },
+
 ];
 
 export const reviews = [
@@ -180,5 +182,11 @@ export const reviews = [
     username: "@albashayera",
     body: "Nauman, I just have to say, you have done great job! Every functionality I told works perfectally, and the whole bidding process feels effortless. It’s super easy to use, and the design looks really professional. I can tell a lot of effort went into this. Honestly, great job—this feels like a high-quality auction site!",
     img: client6
+  },
+  {
+    name: "Amazing Industries",
+    username: "@amazingindustries",
+    body: "This person is realy genius, made our work so easy now I can sleep home and assign jobs to factory members by staying at my home and track each and everything",
+    img: client7
   },
 ];
