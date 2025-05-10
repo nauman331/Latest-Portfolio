@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 import { motion } from "framer-motion";
 import { WordRotate } from "@/components/magicui/word-rotate";
-import { Facebook, FileUser, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Linkedin } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
@@ -117,7 +117,6 @@ const Hero = () => {
               >
                 <Button
                   className={`flex items-center justify-center mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r ${theme === "dark" ? "hover:from-[#C62828] hover:to-[#9C27B0] from-[#9C27B0] to-[#1A237E]" : "from-[#C62828] to-[#9C27B0] hover:from-[#9C27B0] hover:to-[#1A237E]"} transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                    <FileUser />
                   <NavLink to="/resume">
                      Check Out My Resume
                   </NavLink>
